@@ -1,0 +1,8 @@
+@import '../styles.scss';
+
+.main__grid {
+    height: 100vh;
+    display: grid;
+    /* The 0-height row is for the router-outlet element */
+    grid-template-rows: var(--height-navbar) 0 1fr;
+}

@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+/* Breakpoints 
+ *
+ * These will not change, so we can just use SCSS variables */
+$breakpoint-xs: 320px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+/* Timing functions */
+$cubic-bezier: cubic-bezier(0.5, 0, 0.5, 1);
+
+:root {
+    /* Font Families */
+    --font-family-body: 'Open Sans', sans-serif;
+    --font-family-heading: 'Montserrat', sans-serif;
+
+    /* Font Sizes */
+    --font-size-app-header: 2rem;
+
+    /* Color scheme */
+    --clr-olympia-gold: #ffd900;
+    --clr-off-white: #e1e0dd;
+    --clr-light: white;
+    --clr-dark: #222222;
+    --clr-app-select: #74be76;
+
+    /* Spacing */
+    --height-navbar: 4.5rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-family-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-heading);
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+ 

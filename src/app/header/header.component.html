@@ -1,0 +1,33 @@
+<header class="header">
+    <nav class="nav">
+        <div class="nav__left">
+            <a routerLink="">
+                <div class="nav__item">
+                    <h2>GOMAD</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="nav__right">
+            <div class="nav__right--list">
+                <a *ngFor="let link of headerLinks" [routerLink]="link.path">
+                    <div class="nav__item">
+                        {{ link.label }}
+                    </div>
+                </a>
+    
+                <div class="socials">
+                    <a href="#" class="socials__icon">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav__right--burger">
+                <div class="nav__item nav__right--burger__icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

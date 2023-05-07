@@ -1,0 +1,118 @@
+@import '../../styles.scss';
+
+$header-border-height: 4px;
+
+.header {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--height-navbar);
+    border-bottom: $header-border-height solid var(--clr-olympia-gold);
+    
+    padding: 0 1rem;
+    @media (min-width: $breakpoint-sm) {
+        padding: 0 1.5rem;
+    }
+    
+    @media (min-width: $breakpoint-md) {
+        padding: 0 2rem;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    
+    /* Icons in .socials and .nav__right--burger should not have 100% height */
+    & *:not(h1, h2, h3, h4, h5, h6, .socials, &__right--burger) {
+        height: inherit;
+    }
+    
+    & * a {
+        text-decoration: none;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        
+        &--list {
+            display: none;
+            @media (min-width: $breakpoint-md) {
+                display: flex;
+                gap: 1rem;
+            }
+        }
+
+        &--burger {
+            display: flex;
+            @media (min-width: $breakpoint-md) {
+                display: none;
+            }
+
+            &__icon {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+        position: relative;
+
+        transition: all .2s cubic-bezier(0.5, 0, 0.5, 1);
+
+        &:not(.nav__right--burger__icon)::before {
+            content: '';
+            background-color: var(--clr-olympia-gold);
+            position: absolute;
+            bottom: 0px;
+            height: 3px;
+            left: 0;
+            width: 100%;
+            transition: all 0.3s $cubic-bezier;
+            transform: scaleX(0);
+            visibility: hidden;
+        }
+    
+        &:hover {
+            color: var(--clr-olympia-gold);
+
+            &::before {
+                transform: scaleX(1);
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    padding: 0 1rem 0 2rem;
+    border-left: 1px solid var(--clr-light);
+    justify-content: center;
+    align-content: center;
+    font-size: 2rem;
+
+    &__icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all .2s $cubic-bezier;
+
+        &:hover {
+            color: var(--clr-olympia-gold);
+        }
+    }
+}
