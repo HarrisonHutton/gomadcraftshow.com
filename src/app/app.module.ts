@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 
-import { AppLayoutModule } from './@layout/layout/app.layout.module';
+import { AppLayoutModule } from './@layout2/layout/app.layout.module';
 
 @NgModule({
   declarations: [
