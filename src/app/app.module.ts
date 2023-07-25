@@ -10,6 +10,12 @@ import { HeroComponent } from './hero/hero.component';
 
 import { AppLayoutModule } from './@layout2/layout/app.layout.module';
 
+import { ButtonModule } from 'primeng/button';
+
+const PrimeNGModule = [
+  ButtonModule
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +27,8 @@ import { AppLayoutModule } from './@layout2/layout/app.layout.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppLayoutModule
+    AppLayoutModule,
+    ...PrimeNGModule
   ],
   providers: [],
   bootstrap: [AppComponent]

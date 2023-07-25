@@ -4,13 +4,15 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 
-import { AppLayoutComponent } from './@layout/layout/app.layout.component';
+import { AppLayoutComponent } from './@layout2/layout/app.layout.component';
 
 
 const routes: Routes = [
-  { path: '', component: AppLayoutComponent },
-  { path: 'register', component: RegisterComponent},
-  { path: 'contact', component: ContactComponent},
+  { path: '', component: AppLayoutComponent, children: [
+    { path: '', component: HeroComponent},
+    { path: 'register', component: RegisterComponent},
+    { path: 'contact', component: ContactComponent},
+  ]},
 ];
 
 @NgModule({

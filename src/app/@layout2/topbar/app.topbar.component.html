@@ -1,0 +1,38 @@
+<div class="layout-topbar surface-200">
+    <div class="h-full w-full md:w-10 m-auto flex">
+        <div class="h-full w-full flex  justify-content-between">
+            <a class="h-full flex flex-column justify-content-center" routerLink="/">
+                <h1 class="m-0 px-3">GOMAD</h1>
+            </a>
+
+            <div class="flex flex-column justify-content-center mr-2 md:m-0">
+                <button (click)="toggleMenu()"
+                styleClass="p-button-text p-button-secondary"
+                class="p-link p-3">
+                    <i class="pi pi-bars text-4xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-sidebar [(visible)]="menuVisible" [fullScreen]="true">
+    <ng-template pTemplate="content" class="px-0">
+        <div class="flex flex-column justify-content-between align-content-center">
+            <div *ngFor="let item of menuItems" class="p-6 menu-item">
+                <a class="text-7xl md:text-8xl uppercase" [routerLink]="item.routerLink" (click)="toggleMenu()">
+                    <div class="md:w-6 mx-auto">
+                        <span style="font-family: var(--font-family-heading);">{{ item.label }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="closeicon">
+        <button (click)="toggleMenu()"
+        styleClass="p-button-text p-button-secondary"
+        class="p-link p-3">
+            <i class="pi pi-times text-4xl"></i>
+        </button>
+    </ng-template>
+</p-sidebar>

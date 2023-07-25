@@ -11,12 +11,15 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { RippleModule } from 'primeng/ripple';
 import { MenuModule } from 'primeng/menu';
 import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 import { AppLayoutComponent } from './app.layout.component';
+import { AppTopBarComponent } from '../topbar/app.topbar.component';
 
 @NgModule({
     declarations: [
         AppLayoutComponent,
+        AppTopBarComponent
     ],
     imports: [
         BrowserModule,
@@ -31,6 +34,7 @@ import { AppLayoutComponent } from './app.layout.component';
         RippleModule,
         RouterModule,
         MenuModule,
+        ButtonModule
     ],
     exports: [AppLayoutComponent]
 })

@@ -1,0 +1,20 @@
+.topbar-nav {
+    background-color: var(--surface-ground);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item {
+    &:hover {
+        background-image: linear-gradient(
+            45deg,
+            #021706,
+            #076E1A
+        );
+        
+        & > a {
+            color: whitesmoke;
+        }
+    }
+}
