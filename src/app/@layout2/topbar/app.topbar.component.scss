@@ -18,3 +18,25 @@
         }
     }
 }
+
+.desktop-menu-item {
+    position: relative;
+
+    &:hover {
+        &::before {
+            transform: scaleX(0.9);
+            transition: transform 250ms ease-in-out;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: var(--gray-900);
+        bottom: 0px;
+        left: 0px;
+        transform: scaleX(0);
+    }
+}

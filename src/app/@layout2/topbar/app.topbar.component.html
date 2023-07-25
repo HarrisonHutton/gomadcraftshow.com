@@ -6,9 +6,9 @@
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex flex align-content-center mr-3">
-                <div *ngFor="let item of menuItems" class="desktop-menu-item flex flex-column justify-content-center h-full px-5">
-                    <a class="uppercase h-full" [routerLink]="item.routerLink">
+            <div class="hidden md:flex align-content-center mr-3">
+                <div *ngFor="let item of menuItems" class="flex flex-column justify-content-center h-full w-auto">
+                    <a class="desktop-menu-item uppercase h-full px-3 lg:px-5" [routerLink]="item.routerLink">
                         <div class="h-full flex flex-column justify-content-center">
                             <span class="text-gray-900 text-4xl" style="font-family: var(--font-family-heading);">
                                 {{ item.label }}
