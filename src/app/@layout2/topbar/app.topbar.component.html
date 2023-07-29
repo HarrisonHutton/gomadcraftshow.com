@@ -2,7 +2,9 @@
     <div class="h-full w-full md:w-10 m-auto flex">
         <div class="h-full w-full flex justify-content-between">
             <a class="h-full flex flex-column justify-content-center" routerLink="/">
-                <h1 class="m-0 px-3">GOMAD</h1>
+                <div class="topbar-logo">
+                    <h1 class="m-0 px-3 font-bold" style="letter-spacing: 1px;">GOMAD</h1>
+                </div>
             </a>
 
             <!-- Desktop Menu -->
@@ -36,7 +38,7 @@
             <div *ngFor="let item of menuItems" class="p-4 md:p-6 menu-item">
                 <a class="text-7xl md:text-8xl uppercase" [routerLink]="item.routerLink" (click)="toggleMenu()">
                     <div class="md:w-6 mx-auto">
-                        <span style="font-family: var(--font-family-heading);">{{ item.label }}</span>
+                        <span class="text-gray-900" style="font-family: var(--font-family-heading);">{{ item.label }}</span>
                     </div>
                 </a>
             </div>
