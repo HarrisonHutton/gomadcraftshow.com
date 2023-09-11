@@ -8,12 +8,16 @@
 .topbar-logo {
     background-image: linear-gradient(
         45deg,
-        #021706,
-        #076E1A
+        hsl(131, 56%, 38%),
+        hsl(70, 75%, 36%)
     );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.bg-blur {
+    backdrop-filter: blur(10px);
 }
 
 .menu-item {
@@ -45,10 +49,10 @@
         position: absolute;
         height: 4px;
         width: 100%;
-        background-color: var(--gray-900);
+        background-color: rgba(0, 0, 0, 0.8);
         bottom: 0px;
         left: 0px;
-        border-radius: 0px 0px 4px 4px;
+        border-radius: 4px 4px 0px 0px;
         transform: scaleX(0);
     }
 }

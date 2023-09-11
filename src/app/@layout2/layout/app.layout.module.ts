@@ -15,11 +15,13 @@ import { ButtonModule } from 'primeng/button';
 
 import { AppLayoutComponent } from './app.layout.component';
 import { AppTopBarComponent } from '../topbar/app.topbar.component';
+import { AppFooterComponent } from '../footer/app.footer.component';
 
 @NgModule({
     declarations: [
         AppLayoutComponent,
-        AppTopBarComponent
+        AppTopBarComponent,
+        AppFooterComponent
     ],
     imports: [
         BrowserModule,

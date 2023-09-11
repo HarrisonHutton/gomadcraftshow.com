@@ -1,18 +1,16 @@
-<div class="layout-topbar bg-white fixed">
+<div class="layout-topbar bg-white-alpha-70 bg-blur fixed">
     <div class="h-full w-full md:w-10 m-auto flex">
         <div class="h-full w-full flex justify-content-between">
             <a class="h-full flex flex-column justify-content-center" routerLink="/">
-                <div class="topbar-logo">
-                    <h1 class="m-0 px-3 font-bold" style="letter-spacing: 1px;">GOMAD</h1>
-                </div>
+                <span class="text-3xl m-0 px-3 font-bold text-black-alpha-80">GOMAD</span>
             </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex align-content-center mr-3">
                 <div *ngFor="let item of menuItems" class="flex flex-column justify-content-center h-full w-auto">
-                    <a class="desktop-menu-item uppercase h-full px-3 lg:px-5" [routerLink]="item.routerLink">
+                    <a class="desktop-menu-item h-full px-3 lg:px-5" [routerLink]="item.routerLink">
                         <div class="h-full flex flex-column justify-content-center">
-                            <span class="text-gray-900 text-4xl" style="font-family: var(--font-family-heading);">
+                            <span class="text-xl text-black-alpha-80" style="font-family: var(--font-family-heading);">
                                 {{ item.label }}
                             </span>
                         </div>
@@ -36,9 +34,9 @@
     <ng-template pTemplate="content" class="px-0">
         <div class="flex flex-column justify-content-between align-content-center">
             <div *ngFor="let item of menuItems" class="p-4 md:p-6 menu-item">
-                <a class="text-7xl md:text-8xl uppercase" [routerLink]="item.routerLink" (click)="toggleMenu()">
+                <a class="text-7xl md:text-8xl" [routerLink]="item.routerLink" (click)="toggleMenu()">
                     <div class="md:w-6 mx-auto">
-                        <span class="text-gray-900" style="font-family: var(--font-family-heading);">{{ item.label }}</span>
+                        <span class="text-black-alpha-80" style="font-family: var(--font-family-heading);">{{ item.label }}</span>
                     </div>
                 </a>
             </div>

@@ -1,12 +1,76 @@
-<div class="grid mx-2">
-    <div class="col-12 md:col-10 m-auto mt-4">
-        <div class="card">
-            <div class="flex align-items-between">
-                <div class="flex flex-column">
-                    <h1 class="text-8xl">Greece Olympia Music and Drama</h1>
-                    <h2 class="text-7xl">Annual Craft Show</h2>
-                </div>
+<div class="grid m-0">
+    <div class="hero-height col-12 m-auto bg-black-alpha-90 pb-8">
+        <div class="flex justify-content-center mt-6">
+            <div class="flex flex-column align-items-center justify-content-center">
+                <h1 class="text-6xl text-white text-center">Greece Olympia Music and Drama</h1>
+                <h2 class="green-text-gradient big-text font-semibold text-center">Annual Craft Show</h2>
+                <p-button routerLink="/register" styleClass="p-button-text p-button-success">
+                    <div class="flex justify-content-between w-10rem hover-underline">
+                        <span class="text-2xl">Register now</span>
+                        <i class="text-lg fa-solid fa-chevron-right mt-2"></i>
+                    </div>
+                </p-button>
             </div>
         </div>
     </div>
 </div>
+
+<main>
+    <section class="max-w-30rem m-auto py-8 px-3">
+        <h2 class="mb-6 text-center text-5xl text-red-500 font-semibold">
+            News
+        </h2>
+        <h4>Update: Aug 10th, 2023</h4>
+        <p class="text-2xl">
+            Our show is full. We had 10 available spaces this year and received over 50 applications. 
+        </p>
+    </section>
+
+    <div class="grid grid-nogutter bg-black-alpha-90 py-8">
+        <section class="col-12 md:col-6 md:pr-0 pb-8 md:pb-0">
+            <h2 class="text-center mb-4 text-5xl font-semibold text-purple-300">
+                Details
+            </h2>
+            <div class="max-w-30rem px-3 mx-auto text-white-alpha-80">
+                <ul class="list-none m-0 text-3xl">
+                    <li class="mb-3">
+                        <i class="fa-regular fa-calendar-days mr-3"></i>
+                        <span>Craft Show Date: <b>Dec 09, 2023</b></span>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fa-solid fa-screwdriver-wrench mr-3"></i>
+                        <span>Setup Time: <b>7 AM - 9:30 AM</b></span>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fa-regular fa-clock mr-3"></i>
+                        <span>Sale Time: <b>10 AM - 4 PM</b></span>
+                    </li>
+                    <div class="purple-divider"></div>
+                    <li>
+                        <div class="flex flex-column">
+                            <div class="flex mb-2">
+                                <i class="fa-solid fa-location-dot mr-3"></i>
+                                <div class="flex flex-column gap-1">
+                                    <b>Greece Olympia School</b>
+                                    <b>1139 Maiden Lane</b>
+                                    <b>Greece, NY 14615</b>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    
+        <section class="col-12 md:col-6">
+            <h2 class="text-center mb-4 text-5xl font-semibold text-green-300">
+                Register
+            </h2>
+            <div class="max-w-30rem px-3 mx-auto">
+                <div class="text-2xl text-white-alpha-80">
+                    <p>Download and mail in this year's application</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

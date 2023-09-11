@@ -11,9 +11,15 @@ import { HeroComponent } from './hero/hero.component';
 import { AppLayoutModule } from './@layout2/layout/app.layout.module';
 
 import { ButtonModule } from 'primeng/button';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
 
 const PrimeNGModule = [
-  ButtonModule
+  ButtonModule,
+  ProgressSpinnerModule
 ]
 
 @NgModule({
@@ -28,7 +34,10 @@ const PrimeNGModule = [
     BrowserModule,
     AppRoutingModule,
     AppLayoutModule,
-    ...PrimeNGModule
+    ...PrimeNGModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideFunctions(() => getFunctions())
   ],
   providers: [],
   bootstrap: [AppComponent]

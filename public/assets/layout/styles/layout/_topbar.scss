@@ -1,0 +1,9 @@
+.layout-topbar {
+    height: 4rem;
+    z-index: 997;
+    width: 100%;
+    background-color: transparent;
+    transition: left $transitionDuration;
+    display: flex;
+    align-items: center;
+}
