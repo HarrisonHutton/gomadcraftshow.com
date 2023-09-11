@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gomad-craft-show"
+  },
+  "targets": {
+    "gomad-craft-show": {
+      "hosting": {
+        "main-gomad-craft-show": [
+          "gomad-craft-show"
+        ]
+      }
+    }
+  }
+}
