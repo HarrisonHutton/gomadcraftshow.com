@@ -44,4 +44,19 @@ export class RegisterComponent {
     });
   }
 
+  openGymMap() {
+    let gymMapFile = '/assets/floor-maps/gym.pdf';
+    window.open(gymMapFile, '_blank');
+  }
+
+  openLargeCafeMap() {
+    let largeCafeMapFile = '/assets/floor-maps/large-cafe.pdf';
+    window.open(largeCafeMapFile, '_blank');
+  }
+
+  openSmallCafeMap() {
+    let smallCafeMapFile = '/assets/floor-maps/small-cafe.pdf';
+    window.open(smallCafeMapFile, '_blank');
+  }
+
 }

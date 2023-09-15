@@ -5,51 +5,81 @@
             <div class="grid mb-2">
                 <div class="col-12 md:col">
                     <div class="card h-30rem">
-                        <div class="flex justify-content-center mb-5">
-                            <span class="font-bold text-center text-4xl">Gym</span>
-                        </div>
-                        <div class="flex flex-column gap-3 text-4xl">
-                            <div class="flex justify-content-between">
-                                <span>Regular Space</span>
-                                <span>$60.00</span>
+                        <div class="flex flex-column h-full justify-content-between">
+                            <div class="text-4xl">
+                                <div class="flex justify-content-center mb-5">
+                                    <span class="font-bold text-center">Gym</span>
+                                </div>
+                                <div class="flex flex-column justify-content-between">
+                                    <div class="flex flex-column gap-3">
+                                        <div class="flex justify-content-between">
+                                            <span>Regular Space</span>
+                                            <span>$60.00</span>
+                                        </div>
+                                        <div class="flex justify-content-between">
+                                            <span>Endcap Space</span>
+                                            <span>$70.00</span>
+                                        </div>
+                                        <div class="flex justify-content-between">
+                                            <span>Corner Space</span>
+                                            <span>$85.00</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="flex justify-content-between">
-                                <span>Endcap Space</span>
-                                <span>$70.00</span>
-                            </div>
-                            <div class="flex justify-content-between">
-                                <span>Corner Space</span>
-                                <span>$85.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 md:col">
-                    <div class="card h-30rem">
-                        <div class="flex justify-content-center mb-5">
-                            <span class="font-bold text-center text-4xl">Large Cafe</span>
-                        </div>
-                        <div class="flex flex-column gap-3 text-4xl">
-                            <div class="flex justify-content-between">
-                                <span>Regular Space</span>
-                                <span>$55.00</span>
-                            </div>
-                            <div class="flex justify-content-between">
-                                <span>Corner Space</span>
-                                <span>$65.00</span>
+                            <div class="flex justify-content-center">
+                                <p-button styleClass="p-button-secondary" label="See floor map" icon="fa-solid fa-map" (onClick)="openGymMap()">
+                                </p-button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 md:col">
                     <div class="card h-30rem">
-                        <div class="flex justify-content-center mb-5">
-                            <span class="font-bold text-center text-4xl">Small Cafe</span>
+                        <div class="flex flex-column h-full justify-content-between">
+                            <div class="text-4xl">
+                                <div class="flex justify-content-center mb-5">
+                                    <span class="font-bold text-center">Large Cafe</span>
+                                </div>
+                                <div class="flex flex-column justify-content-between">
+                                    <div class="flex flex-column gap-3">
+                                        <div class="flex justify-content-between">
+                                            <span>Regular Space</span>
+                                            <span>$55.00</span>
+                                        </div>
+                                        <div class="flex justify-content-between">
+                                            <span>Corner Space</span>
+                                            <span>$65.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-content-center">
+                                <p-button styleClass="p-button-secondary" label="See floor map" icon="fa-solid fa-map" (onClick)="openLargeCafeMap()">
+                                </p-button>
+                            </div>
                         </div>
-                        <div class="flex flex-column gap-3 text-4xl">
-                            <div class="flex justify-content-between">
-                                <span>Regular Space</span>
-                                <span>$40.00</span>
+                    </div>
+                </div>
+                <div class="col-12 md:col">
+                    <div class="card h-30rem">
+                        <div class="flex flex-column h-full justify-content-between">
+                            <div class="text-4xl">
+                                <div class="flex justify-content-center mb-5">
+                                    <span class="font-bold text-center">Small Cafe</span>
+                                </div>
+                                <div class="flex flex-column justify-content-between">
+                                    <div class="flex flex-column gap-3">
+                                        <div class="flex justify-content-between">
+                                            <span>Regular Space</span>
+                                            <span>$40.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-content-center">
+                                <p-button styleClass="p-button-secondary" label="See floor map" icon="fa-solid fa-map" (onClick)="openSmallCafeMap()">
+                                </p-button>
                             </div>
                         </div>
                     </div>
