@@ -12,6 +12,7 @@ const routes: Routes = [
     { path: '', component: HeroComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'contact', component: ContactComponent},
+    { path: '**', redirectTo: '' }
   ]},
 ];
 
