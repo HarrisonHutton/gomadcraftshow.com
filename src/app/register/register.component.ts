@@ -50,12 +50,12 @@ export class RegisterComponent {
   }
 
   openLargeCafeMap() {
-    let largeCafeMapFile = '/assets/floor-maps/large-cafe.pdf';
+    let largeCafeMapFile = '/assets/floor-maps/largecafe.pdf';
     window.open(largeCafeMapFile, '_blank');
   }
 
   openSmallCafeMap() {
-    let smallCafeMapFile = '/assets/floor-maps/small-cafe.pdf';
+    let smallCafeMapFile = '/assets/floor-maps/smallcafe.pdf';
     window.open(smallCafeMapFile, '_blank');
   }
 
