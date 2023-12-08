@@ -44,6 +44,8 @@ export class FindVendorsComponent implements OnDestroy{
 
     this.subscription = collectionData(this.vendorsCollectionRef, {idField: 'id'})
     .subscribe(vendors => {
+      this.clearData();
+
       this.vendorList = vendors as Vendor[];
       this.vendorList.forEach(vendor => {
         if (this.locationsToVendors[vendor.location]) {
@@ -64,5 +66,10 @@ export class FindVendorsComponent implements OnDestroy{
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  clearData(): void {
+    this.vendorList = [];
+    this.locationsToVendors = {};
   }
 }
