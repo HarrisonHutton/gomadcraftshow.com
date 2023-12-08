@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { DividerModule } from 'primeng/divider';
 import { Subscription } from 'rxjs';
+import { ButtonModule } from 'primeng/button';
 
 type Vendor = {
   firstname: string,
@@ -15,7 +16,7 @@ type Vendor = {
 @Component({
   selector: 'app-find-vendors',
   standalone: true,
-  imports: [CommonModule, DividerModule],
+  imports: [CommonModule, DividerModule, ButtonModule],
   templateUrl: './find-vendors.component.html',
   styleUrls: ['./find-vendors.component.scss']
 })
@@ -71,5 +72,15 @@ export class FindVendorsComponent implements OnDestroy{
   clearData(): void {
     this.vendorList = [];
     this.locationsToVendors = {};
+  }
+
+  /* These functions should be moved to a service, but for the
+   * sake of time, they are being placed here. */
+  openMap(location: string) {
+    let parsedLoc = location.toLowerCase();
+    /* Remove any whitespace in the location. */
+    parsedLoc = parsedLoc.replace(' ', '');
+    let mapFile = `/assets/floor-maps/${parsedLoc}.pdf`;
+    window.open(mapFile, '_blank');
   }
 }

@@ -4,7 +4,13 @@
         <div style="height:600px;" class="overflow-y-auto">
             <div *ngFor="let vendorList of locationsToVendors | keyvalue" class="mb-4">
                 <div class="sticky-header bg-white">
-                    <h2>{{ vendorList.key }}</h2>
+                    <div class="flex justify-content-between">
+                        <h2>{{ vendorList.key }}</h2>
+                        <div class="p-1">
+                            <p-button styleClass="p-button-secondary" label="See floor map" icon="fa-solid fa-map" (onClick)="openMap(vendorList.key)">
+                            </p-button>
+                        </div>
+                    </div>
                     <p-divider></p-divider>
                 </div>
                 <div *ngFor="let vendor of vendorList.value"
