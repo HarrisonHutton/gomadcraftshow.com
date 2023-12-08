@@ -35,6 +35,10 @@ export class AppTopBarComponent {
             routerLink: '/register'
         },
         {
+            label: 'Find Vendors',
+            routerLink: '/vendors'
+        },
+        {
             label: 'Contact',
             routerLink: '/contact'
         },
