@@ -45,20 +45,17 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="mt-4">
-                        <Button>
-                            <Link
-                                href="/register"
-                                className="flex items-center"
-                            >
+                        <Link href="/register">
+                            <Button className="flex items-center">
                                 <span>Register to be in the show!</span>
                                 <ArrowUpRight className="ml-2 h-5 w-5" />
-                            </Link>
-                        </Button>
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 
                 {/* News card */}
-                <div className="card mt-8 text-black md:mt-0">
+                <div className="hero-card mt-8 text-black md:mt-0">
                     <p className="text-3xl font-semibold">2 Spots Left!</p>
                     <p className="mt-[-16px] opacity-50">07/29/24</p>
                     <p>
@@ -68,12 +65,12 @@ export default function Home() {
                         list.
                     </p>
                     <p className="author">GOMAD</p>
-                    <Button>
-                        <Link href="/register" className="flex items-center">
+                    <Link href="/register">
+                        <Button className="flex w-full items-center">
                             <span>Register now!</span>
                             <ArrowUpRight className="ml-2 h-5 w-5" />
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </div>
             </div>
 

@@ -52,12 +52,12 @@ export function Navbar() {
 
                 {/* Register CTA */}
                 <div className="hidden items-center p-4 md:flex">
-                    <Button>
-                        <Link href="/register" className="flex items-center">
+                    <Link href="/register">
+                        <Button className="flex items-center">
                             <span>Register</span>
                             <ArrowUpRight className="ml-2 h-5 w-5" />
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Mobile menu */}
