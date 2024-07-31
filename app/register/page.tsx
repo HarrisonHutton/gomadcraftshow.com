@@ -35,15 +35,18 @@ export default function Register() {
                     <p className="mt-4 text-xl">
                         Register to be a vendor at our Annual Craft Show!
                     </p>
-                    <div className="mt-8 rounded-lg border border-green-700 bg-green-100 p-4">
-                        <p className="text-green-900">
+                    <div className="mt-8 rounded-lg border border-green-700 bg-green-100 p-4 text-green-900">
+                        <span className="text-xl font-semibold">
+                            2 Spots Left!
+                        </span>
+                        <p className="mt-2">
                             At this point, the only remaining spaces are{" "}
                             <strong>S-04</strong> and <strong>S-09</strong> in
                             the Small Cafe.
                         </p>
                     </div>
 
-                    <div className="mt-6">
+                    <div className="mt-6 text-xl">
                         {new Date(Date.now()) >= applicationVisibleDate ? (
                             <>
                                 <p>Fill out the 2024 application here!</p>
