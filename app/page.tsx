@@ -125,7 +125,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mt-12 flex flex-col gap-2 md:flex-row">
-                    <div className="w-1/2">
+                    <div className="">
                         <div className="flex items-center gap-2 bg-gradient-to-tr from-blue-600 to-cyan-500 bg-clip-text text-5xl font-bold text-transparent">
                             {/* <Store className="h-8 w-8 text-black" /> */}
                             <h3 className="text-black">For the vendors</h3>
