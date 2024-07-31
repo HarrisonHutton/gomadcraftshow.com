@@ -40,9 +40,9 @@ export default function Register() {
                             2 Spots Left!
                         </span>
                         <p className="mt-2">
-                            At this point, the only remaining spaces are{" "}
-                            <strong>S-04</strong> and <strong>S-09</strong> in
-                            the Small Cafe.
+                            Due to record number of returning vendors, the only
+                            remaining spaces are <strong>S-04</strong> and{" "}
+                            <strong>S-09</strong> in the Small Cafe.
                         </p>
                     </div>
 
