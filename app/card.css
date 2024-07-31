@@ -1,6 +1,6 @@
 /* From https://uiverse.io/Pravins01/odd-fly-66 */
 
-.card {
+.hero-card {
     position: relative;
     width: 285px;
     height: auto;
@@ -13,7 +13,7 @@
     /* cursor: pointer; */
   }
   
-  .card::before {
+  .hero-card::before {
     content: '';
     position: absolute;
     left: -7.5px;
@@ -29,7 +29,7 @@
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
-  .card::after {
+  .hero-card::after {
     content: "";
     z-index: -1;
     position: absolute;
@@ -50,7 +50,7 @@
     font-size: 14px;
   } */
   
-  .card .author {
+  .hero-card .author {
     color: #46d761;
     font-weight: 600;
   }
