@@ -59,9 +59,7 @@ export default function Home() {
 
                 {/* News card */}
                 <div className="card mt-8 text-black md:mt-0">
-                    <p className="text-3xl font-semibold">
-                        2 Applications Left!
-                    </p>
+                    <p className="text-3xl font-semibold">2 Spots Left!</p>
                     <p className="mt-[-16px] opacity-50">07/29/24</p>
                     <p>
                         We had a record number of returning vendors this year
