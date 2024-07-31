@@ -80,10 +80,15 @@ export default function Register() {
                                 <div className="flex h-full flex-col justify-between">
                                     <div className="w-full">
                                         <div className="flex w-full flex-col gap-5">
-                                            <div className="flex justify-between">
-                                                <span>Regular Space</span>
-                                                <span className="font-semibold">
-                                                    $40.00
+                                            <div className="w-full">
+                                                <div className="flex justify-between">
+                                                    <span>Regular Space</span>
+                                                    <span className="font-semibold">
+                                                        $40.00
+                                                    </span>
+                                                </div>
+                                                <span className="opacity-50">
+                                                    7ft x 8ft
                                                 </span>
                                             </div>
                                         </div>
@@ -105,16 +110,27 @@ export default function Register() {
                                 <div className="flex h-full flex-col justify-between">
                                     <div className="w-full">
                                         <div className="flex w-full flex-col gap-5">
-                                            <div className="flex justify-between">
-                                                <span>Regular Space</span>
-                                                <span className="font-semibold">
-                                                    $55.00
+                                            <div className="w-full">
+                                                <div className="flex justify-between">
+                                                    <span>Regular Space</span>
+                                                    <span className="font-semibold">
+                                                        $55.00
+                                                    </span>
+                                                </div>
+                                                <span className="opacity-50">
+                                                    6ft x 8ft
                                                 </span>
                                             </div>
-                                            <div className="flex justify-between">
-                                                <span>Corner Space</span>
-                                                <span className="font-semibold">
-                                                    $65.00
+
+                                            <div className="w-full">
+                                                <div className="flex justify-between">
+                                                    <span>Corner Space</span>
+                                                    <span className="font-semibold">
+                                                        $65.00
+                                                    </span>
+                                                </div>
+                                                <span className="opacity-50">
+                                                    2 display sides
                                                 </span>
                                             </div>
                                         </div>
@@ -136,23 +152,44 @@ export default function Register() {
                                 <div className="flex h-full flex-col justify-between">
                                     <div className="w-full">
                                         <div className="flex w-full flex-col gap-5">
-                                            <div className="flex justify-between">
-                                                <span>Regular Space</span>
-                                                <span className="font-semibold">
-                                                    $60.00
+                                            <div className="w-full">
+                                                <div className="flex justify-between">
+                                                    <span>Regular Space</span>
+                                                    <span className="font-semibold">
+                                                        $60.00
+                                                    </span>
+                                                </div>
+                                                <span className="opacity-50">
+                                                    6ft x 10ft
                                                 </span>
                                             </div>
-                                            <div className="flex justify-between">
-                                                <span>Endcap Space</span>
-                                                <span className="font-semibold">
-                                                    $70.00
-                                                </span>
+
+                                            <div className="w-full">
+                                                <div className="flex justify-between">
+                                                    <span>Endcap Space</span>
+                                                    <span className="font-semibold">
+                                                        $70.00
+                                                    </span>
+                                                </div>
+                                                <div className="flex flex-col opacity-50">
+                                                    <span>6ft x 12ft</span>
+                                                    <span>3 display sides</span>
+                                                </div>
                                             </div>
-                                            <div className="flex justify-between">
-                                                <span>Corner Space</span>
-                                                <span className="font-semibold">
-                                                    $85.00
-                                                </span>
+
+                                            <div className="w-full">
+                                                <div className="flex justify-between">
+                                                    <span>Corner Space</span>
+                                                    <span className="font-semibold">
+                                                        $85.00
+                                                    </span>
+                                                </div>
+                                                <div className="flex flex-col opacity-50">
+                                                    <span>
+                                                        15ft x 6ft + 6ft x 6ft
+                                                    </span>
+                                                    <span>2 display sides</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
