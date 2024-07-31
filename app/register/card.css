@@ -3,7 +3,7 @@
 .card {
     position: relative;
     width: 285px;
-    height: 400px;
+    height: 450px;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
