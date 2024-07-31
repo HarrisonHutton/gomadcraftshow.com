@@ -6,7 +6,7 @@ export default function Contact() {
             <div className="mx-auto max-w-7xl">
                 <div>
                     <h1 className="text-7xl font-semibold">Contact</h1>
-                    <p className="mt-4 text-xl">
+                    <p className="my-4 text-xl">
                         Message us at{" "}
                         <Link
                             href="mailto:gomadcraftshow@gmail.com"
