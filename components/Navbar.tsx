@@ -40,7 +40,12 @@ export function Navbar() {
                             key={link.name}
                             className="flex items-center justify-center rounded-lg p-4"
                         >
-                            <Link href={link.path}>{link.name}</Link>
+                            <Link
+                                href={link.path}
+                                className="transition-all hover:underline"
+                            >
+                                {link.name}
+                            </Link>
                         </li>
                     ))}
                 </div>
