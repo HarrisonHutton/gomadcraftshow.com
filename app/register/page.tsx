@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import "./card.css";
 
 export default function Register() {
+    const applicationVisibleDate = new Date("August 1, 2024");
+
     const openSmallCafeMap = () => {
         const smallCafeMapFile = "/floor-maps/small-cafe.pdf";
         window.open(smallCafeMapFile, "_blank");
@@ -18,6 +20,11 @@ export default function Register() {
     const openGymMap = () => {
         const gymMapFile = "/floor-maps/gym.pdf";
         window.open(gymMapFile, "_blank");
+    };
+
+    const openApplication = () => {
+        const applicationFile = "/applications/2024_craft_show_application.pdf";
+        window.open(applicationFile, "_blank");
     };
 
     return (
@@ -34,6 +41,26 @@ export default function Register() {
                             <strong>S-04</strong> and <strong>S-09</strong> in
                             the Small Cafe.
                         </p>
+                    </div>
+
+                    <div className="mt-6">
+                        {new Date(Date.now()) >= applicationVisibleDate ? (
+                            <>
+                                <p>Fill out the 2024 application here!</p>
+                                <Button
+                                    size="lg"
+                                    className="mt-2"
+                                    onClick={openApplication}
+                                >
+                                    <span>2024 Application</span>
+                                </Button>
+                            </>
+                        ) : (
+                            <p>
+                                The 2024 application will be available here on
+                                August 1st at midnight.
+                            </p>
+                        )}
                     </div>
                 </div>
                 <div className="mt-12">
