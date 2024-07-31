@@ -1,0 +1,66 @@
+/* From https://uiverse.io/Pravins01/odd-fly-66 */
+
+.card {
+    position: relative;
+    width: 285px;
+    height: auto;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 18px;
+    gap: 18px;
+    border-radius: 9px;
+    /* cursor: pointer; */
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -7.5px;
+    margin: auto;
+    width: 300px;
+    height: calc(100% + 15px);
+    border-radius: 15px;
+    background: linear-gradient(-45deg, #46d761 0%, #bddc21 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #46d761 0%, #bddc21 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(30px);
+  }
+  
+  /* .heading {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+  } */
+  
+  /* .card p:not(.heading) {
+    font-size: 14px;
+  } */
+  
+  .card .author {
+    color: #46d761;
+    font-weight: 600;
+  }
+  
+  /* .card:hover::after {
+    filter: blur(30px);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  } */
+  
+  /* .card:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  } */
+  
+  
