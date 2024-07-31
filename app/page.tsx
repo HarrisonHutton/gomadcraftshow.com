@@ -39,7 +39,7 @@ export default function Home() {
                     </div>
                     <div className="mt-4">
                         <p className="max-w-[50ch] text-xl">
-                            Western New York's largest winter craft show,
+                            Western New York&apos;s largest winter craft show,
                             featuring over 100 vendors! Join us for a day of
                             shopping, food, and fun!
                         </p>
