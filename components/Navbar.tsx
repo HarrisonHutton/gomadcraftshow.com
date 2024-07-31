@@ -19,7 +19,7 @@ export function Navbar() {
         <nav className="bg-white">
             <ul className="mx-auto flex items-center justify-between px-2 text-lg md:px-4">
                 {/* LOGO */}
-                <div className="ml-4 md:ml-0">
+                <div className="">
                     <li className="align-center flex justify-center rounded-lg md:p-4">
                         <Link href="/" className="flex items-center gap-2">
                             <Image
@@ -28,7 +28,7 @@ export function Navbar() {
                                 width={35}
                                 height={35}
                             />
-                            <span className="font-bold">GOMAD</span>
+                            <span className="text-2xl font-bold">GOMAD</span>
                         </Link>
                     </li>
                 </div>
