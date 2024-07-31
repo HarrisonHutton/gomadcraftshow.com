@@ -14,7 +14,7 @@ export default function Contact() {
                         >
                             gomadcraftshow@gmail.com
                         </Link>{" "}
-                        and we'll respond as soon as possible.{" "}
+                        and we&apos;ll respond as soon as possible.{" "}
                     </p>
                 </div>
             </div>
