@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, CalendarDays, Wrench, Clock, Store } from "lucide-react";
+import {
+    ArrowUpRight,
+    CalendarDays,
+    Wrench,
+    Clock,
+    MapPin,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -93,51 +99,74 @@ export default function Home() {
                 />
             </div>
 
-            {/* For the vendors */}
+            {/* Show Info */}
             <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-                <div className="py-6 text-5xl font-semibold md:mx-auto md:text-7xl">
-                    <span>When should I get there?</span>
-                </div>
-                <div className="flex flex-col gap-6 text-2xl md:text-3xl">
-                    <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
-                            <CalendarDays />
-                            <span>Craft Show Date</span>
-                        </div>
-                        <span className="text-4xl font-semibold md:text-5xl">
-                            December 14th, 2024
-                        </span>
+                {/* Location */}
+                <div>
+                    <div className="py-6 text-6xl font-semibold md:mx-auto md:text-8xl">
+                        <span>Where is it?</span>
                     </div>
-
-                    <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
-                            <Clock />
-                            <span>Sale Time</span>
-                        </div>
-                        <span className="text-4xl font-semibold md:text-5xl">
-                            10 AM - 4 PM
-                        </span>
-                    </div>
-                </div>
-                <div className="mt-12 flex flex-col gap-2 md:flex-row">
-                    <div className="">
-                        <div className="flex items-center gap-2 bg-gradient-to-tr from-blue-600 to-cyan-500 bg-clip-text text-5xl font-bold text-transparent">
-                            {/* <Store className="h-8 w-8 text-black" /> */}
-                            <h3 className="text-black">For the vendors</h3>
-                        </div>
-                        <div className="mt-4 flex flex-col gap-4 text-2xl md:text-3xl">
-                            <div className="flex flex-col">
-                                <div className="flex items-center gap-2">
-                                    <Wrench />
-                                    <span>Setup Time</span>
-                                </div>
-                                <span className="text-4xl font-semibold md:text-5xl">
-                                    7 AM - 9:30 AM
-                                </span>
+                    <div className="flex flex-col gap-6 text-xl md:text-2xl">
+                        <div className="flex flex-col">
+                            <div className="flex items-center gap-2">
+                                <MapPin />
+                                <span>Location</span>
+                            </div>
+                            <div className="flex flex-col gap-2 text-4xl font-semibold md:text-5xl">
+                                <span>Greece Olympia School</span>
+                                <span>1139 Maiden Lane</span>
+                                <span>Greece, NY 14615</span>
                             </div>
                         </div>
                     </div>
-                    {/* <div className="h-full w-[2px] bg-gradient-to-t from-transparent via-black to-transparent"></div> */}
+                </div>
+
+                {/* Time */}
+                <div className="mt-8 md:mt-14">
+                    <div className="py-6 text-6xl font-semibold md:mx-auto md:text-8xl">
+                        <span>When should I get there?</span>
+                    </div>
+                    <div className="mt-4 flex flex-col gap-6 text-xl md:text-2xl">
+                        <div className="flex flex-col">
+                            <div className="flex items-center gap-2">
+                                <CalendarDays />
+                                <span>Craft Show Date</span>
+                            </div>
+                            <span className="text-4xl font-semibold md:text-5xl">
+                                December 14th, 2024
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <div className="flex items-center gap-2">
+                                <Clock />
+                                <span>Sale Time</span>
+                            </div>
+                            <span className="text-4xl font-semibold md:text-5xl">
+                                10 AM - 4 PM
+                            </span>
+                        </div>
+                    </div>
+                    <div className="mt-12 flex flex-col gap-2 md:flex-row">
+                        <div className="">
+                            <div className="flex items-center gap-2 bg-gradient-to-tr from-blue-600 to-cyan-500 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+                                {/* <Store className="h-8 w-8 text-black" /> */}
+                                <h3 className="text-black">For the vendors</h3>
+                            </div>
+                            <div className="mt-4 flex flex-col gap-4 text-xl md:text-2xl">
+                                <div className="flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                        <Wrench />
+                                        <span>Setup Time</span>
+                                    </div>
+                                    <span className="text-4xl font-semibold md:text-5xl">
+                                        7 AM - 9:30 AM
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {/* <div className="h-full w-[2px] bg-gradient-to-t from-transparent via-black to-transparent"></div> */}
+                    </div>
                 </div>
             </div>
         </div>
