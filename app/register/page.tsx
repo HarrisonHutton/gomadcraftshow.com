@@ -51,7 +51,7 @@ export default function Register() {
 
                     <div className="mt-6 text-xl">
                         <p>Fill out the 2024 application here!</p>
-                        <div className="flex gap-4">
+                        <div className="flex flex-wrap gap-4">
                             <Button
                                 size="lg"
                                 className="mt-2"
