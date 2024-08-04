@@ -47,23 +47,14 @@ export default function Register() {
                     </div>
 
                     <div className="mt-6 text-xl">
-                        {new Date(Date.now()) >= applicationVisibleDate ? (
-                            <>
-                                <p>Fill out the 2024 application here!</p>
-                                <Button
-                                    size="lg"
-                                    className="mt-2"
-                                    onClick={openApplication}
-                                >
-                                    <span>2024 Application</span>
-                                </Button>
-                            </>
-                        ) : (
-                            <p>
-                                The 2024 application will be available here on
-                                August 1st at midnight.
-                            </p>
-                        )}
+                        <p>Fill out the 2024 application here!</p>
+                        <Button
+                            size="lg"
+                            className="mt-2"
+                            onClick={openApplication}
+                        >
+                            <span>2024 Application</span>
+                        </Button>
                     </div>
                 </div>
                 <div className="mt-12">
