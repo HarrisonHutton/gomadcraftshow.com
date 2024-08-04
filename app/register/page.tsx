@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import "./card.css";
 
 export default function Register() {
-    const applicationVisibleDate = new Date("August 1, 2024");
-
     const openSmallCafeMap = () => {
         const smallCafeMapFile = "/floor-maps/small-cafe.pdf";
         window.open(smallCafeMapFile, "_blank");
@@ -25,6 +23,11 @@ export default function Register() {
     const openApplication = () => {
         const applicationFile = "/applications/2024_craft_show_application.pdf";
         window.open(applicationFile, "_blank");
+    };
+
+    const openFees = () => {
+        const feesFile = "/applications/2024_craft_show_fees.pdf";
+        window.open(feesFile, "_blank");
     };
 
     return (
@@ -48,13 +51,22 @@ export default function Register() {
 
                     <div className="mt-6 text-xl">
                         <p>Fill out the 2024 application here!</p>
-                        <Button
-                            size="lg"
-                            className="mt-2"
-                            onClick={openApplication}
-                        >
-                            <span>2024 Application</span>
-                        </Button>
+                        <div className="flex gap-4">
+                            <Button
+                                size="lg"
+                                className="mt-2"
+                                onClick={openFees}
+                            >
+                                <span>Rules and Regulations</span>
+                            </Button>
+                            <Button
+                                size="lg"
+                                className="mt-2"
+                                onClick={openApplication}
+                            >
+                                <span>2024 Application</span>
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-12">
