@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
     return (
-        <div className="bg-black text-gray-200">
+        <footer className="bg-black text-gray-200">
             <div className="mx-auto flex max-w-7xl flex-col px-4 py-16 md:px-8">
                 <span>
                     <Link href="/contact">Contact us</Link>
@@ -14,6 +14,6 @@ export function Footer() {
                     <span>&copy; 2024. GOMAD. All rights reserved.</span>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }

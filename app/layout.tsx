@@ -19,9 +19,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div className="flex flex-col">
+                <div className="flex min-h-dvh flex-col">
                     <Navbar />
-                    {children}
+                    <main className="flex-grow">{children}</main>
                     <Footer />
                 </div>
             </body>
