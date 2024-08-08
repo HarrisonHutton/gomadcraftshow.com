@@ -5,29 +5,28 @@ import { Button } from "@/components/ui/button";
 import "./card.css";
 
 export default function Register() {
+    const openFile = (filename: string) => {
+        window.open(filename, "_blank");
+    };
+
     const openSmallCafeMap = () => {
-        const smallCafeMapFile = "/floor-maps/small-cafe.pdf";
-        window.open(smallCafeMapFile, "_blank");
+        openFile("/floor-maps/small-cafe.pdf");
     };
 
     const openLargeCafeMap = () => {
-        const largeCafeMapFile = "/floor-maps/large-cafe.pdf";
-        window.open(largeCafeMapFile, "_blank");
+        openFile("/floor-maps/large-cafe.pdf");
     };
 
     const openGymMap = () => {
-        const gymMapFile = "/floor-maps/gym.pdf";
-        window.open(gymMapFile, "_blank");
+        openFile("/floor-maps/gym.pdf");
     };
 
     const openApplication = () => {
-        const applicationFile = "/applications/2024_craft_show_application.pdf";
-        window.open(applicationFile, "_blank");
+        openFile("/applications/2024_craft_show_application.pdf");
     };
 
     const openFees = () => {
-        const feesFile = "/applications/2024_craft_show_fees.pdf";
-        window.open(feesFile, "_blank");
+        openFile("/applications/2024_craft_show_fees.pdf");
     };
 
     return (
