@@ -1,0 +1,38 @@
+.burger {
+    &::before, &::after {
+        content: '';
+        display: block;
+        width: 80%;
+        height: 1px;
+        @apply bg-black;
+        margin: auto;
+        position: relative;
+        @apply transition-all;
+        @apply duration-200;
+    }
+
+    &::before {
+        top: 5px;
+    }
+
+    &::after {
+        top: -5px;
+    }
+}
+
+.burgerActive {
+    &::before, &::after {
+        @apply transition-all;
+        @apply duration-200;
+    }
+
+    &::before {
+        top: .5px;
+        transform: rotate(45deg);
+    }
+    
+    &::after {
+        top: -.5px;
+        transform: rotate(-45deg);
+    }
+}

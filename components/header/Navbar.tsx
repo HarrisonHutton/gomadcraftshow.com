@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { Button } from "../ui/button";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+
+import styles from "./header.module.scss";
 
 export function Navbar() {
     const navbarLinks = [
@@ -61,14 +63,17 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile menu */}
-                <div className="flex p-4 md:hidden">
+                <div className="flex md:hidden">
                     <button
+                        className="h-[50px] w-[50px] p-2"
                         onClick={() => {
                             setMenuOpen(!menuOpen);
                             console.log("menuOpen: ", menuOpen);
                         }}
                     >
-                        <Menu />
+                        <div
+                            className={`w-full transition-all ${styles.burger} ${menuOpen ? styles.burgerActive : ""}`}
+                        ></div>
                     </button>
                 </div>
             </ul>
