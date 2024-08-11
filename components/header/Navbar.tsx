@@ -126,9 +126,9 @@ export function Navbar() {
                                     }
                                 }}
                             >
-                                <Button className="flex w-full items-center">
+                                <Button className="flex w-full items-center p-6 text-3xl font-normal">
                                     <span>Register</span>
-                                    <ArrowUpRight className="ml-2 h-5 w-5" />
+                                    <ArrowUpRight className="ml-2 h-7 w-7" />
                                 </Button>
                             </Link>
                         </li>
