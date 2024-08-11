@@ -37,14 +37,14 @@ export default function Register() {
                     <p className="mt-4 text-xl">
                         Register to be a vendor at our Annual Craft Show!
                     </p>
+
                     <div className="mt-8 rounded-lg border border-green-700 bg-green-100 p-4 text-green-900">
                         <span className="text-xl font-semibold">
-                            2 Spots Left!
+                            The 2024 show is now full! 🎉
                         </span>
                         <p className="mt-2">
-                            Due to a record number of returning vendors, the
-                            only remaining spaces are <strong>S-04</strong> and{" "}
-                            <strong>S-09</strong> in the Small Cafe.
+                            If you would like to be placed on the waitlist,
+                            please still fill out and send in the application!
                         </p>
                     </div>
 

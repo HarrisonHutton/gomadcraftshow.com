@@ -62,13 +62,13 @@ export default function Home() {
 
                 {/* News card */}
                 <div className="hero-card mt-8 text-black md:mt-0">
-                    <p className="text-3xl font-semibold">2 Spots Left!</p>
-                    <p className="mt-[-16px] opacity-50">07/29/24</p>
+                    <p className="text-3xl font-semibold">
+                        The 2024 show is now full! 🎉
+                    </p>
+                    <p className="mt-[-16px] opacity-50">08/11/24</p>
                     <p>
-                        We had a record number of returning vendors this year
-                        and only have 2 available spaces for 2024. As always, we
-                        will accept applications to be placed on the waiting
-                        list.
+                        If you would like to be placed on the waitlist, please
+                        still fill out and send in the application!
                     </p>
                     <p className="author">GOMAD</p>
                     <Link href="/register">
