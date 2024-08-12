@@ -128,7 +128,7 @@ export function Navbar() {
                             >
                                 <Button className="flex w-full items-center p-6 text-3xl font-normal">
                                     <span>Register</span>
-                                    <ArrowUpRight className="ml-2 h-7 w-7" />
+                                    <ArrowUpRight className="ml-2 h-8 w-8" />
                                 </Button>
                             </Link>
                         </li>
