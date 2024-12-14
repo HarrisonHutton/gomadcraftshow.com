@@ -4,10 +4,12 @@ import { MapPin, User } from "lucide-react";
 import { FloorMapButton } from "./floor-map-button";
 import "./styles.css";
 
+// Function to fetch vendors
 const getVendors = async () => {
     return db.select().from(vendorsTable);
 };
 
+// Function to determine the location based on the vendor location
 const getLocation = (locationString: string) => {
     if (locationString.startsWith("G")) {
         return "Gym";
@@ -19,7 +21,9 @@ const getLocation = (locationString: string) => {
     return "Unknown";
 };
 
-export async function getServerSideProps() {
+// Server component that fetches vendors and renders them
+export default async function Vendors() {
+    // Fetch vendors directly here in the server component
     const vendors: SelectVendor[] = await getVendors();
 
     let locationsToVendors: { [key: string]: SelectVendor[] } = {};
@@ -31,18 +35,6 @@ export async function getServerSideProps() {
         locationsToVendors[location].push(vendor);
     });
 
-    return {
-        props: {
-            locationsToVendors,
-        },
-    };
-}
-
-export default function Vendors({
-    locationsToVendors,
-}: {
-    locationsToVendors: { [key: string]: SelectVendor[] };
-}) {
     return (
         <div className="mx-auto max-w-7xl px-4 md:px-8">
             <h1 className="mb-8 text-3xl font-semibold lg:text-7xl">
@@ -69,6 +61,7 @@ export default function Vendors({
                             </div>
 
                             <ul>
+                                {/* List the vendors here */}
                                 {locationsToVendors[location].map((vendor) => (
                                     <li
                                         className="my-4 flex flex-col"
