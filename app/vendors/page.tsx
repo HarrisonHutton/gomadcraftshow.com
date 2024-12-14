@@ -60,7 +60,10 @@ export default async function Vendors() {
                             <ul>
                                 {/* List the vendors here */}
                                 {locationsToVendors[location].map((vendor) => (
-                                    <li className="my-4 flex flex-col">
+                                    <li
+                                        className="my-4 flex flex-col"
+                                        key={vendor.id}
+                                    >
                                         {vendor.vendor_name ? (
                                             <span className="text-3xl font-semibold">
                                                 {vendor.vendor_name}
