@@ -5,9 +5,9 @@ import { FloorMapButton } from "./floor-map-button";
 import "./styles.css";
 
 // Function to fetch vendors
-const getVendors = async () => {
-    return db.select().from(vendorsTable);
-};
+// const getVendors = async () => {
+//     return db.select().from(vendorsTable);
+// };
 
 // Function to determine the location based on the vendor location
 const getLocation = (locationString: string) => {
@@ -24,7 +24,8 @@ const getLocation = (locationString: string) => {
 // Server component that fetches vendors and renders them
 export default async function Vendors() {
     // Fetch vendors directly here in the server component
-    const vendors: SelectVendor[] = await getVendors();
+    // const vendors: SelectVendor[] = await getVendors();
+    const vendors: SelectVendor[] = [];
 
     let locationsToVendors: { [key: string]: SelectVendor[] } = {};
     vendors.forEach((vendor) => {
