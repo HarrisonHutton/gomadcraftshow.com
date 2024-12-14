@@ -1,8 +1,8 @@
 import { SelectVendor, vendorsTable } from "@/db/schema";
 import { db } from "@/db/connection";
-import "./styles.css";
-import { FloorMapButton } from "./floor-map-button";
 import { MapPin, User } from "lucide-react";
+import { FloorMapButton } from "./floor-map-button";
+import "./styles.css";
 
 const getVendors = async () => {
     return db.select().from(vendorsTable);
@@ -19,7 +19,7 @@ const getLocation = (locationString: string) => {
     return "Unknown";
 };
 
-export default async function Vendors() {
+export async function getServerSideProps() {
     const vendors: SelectVendor[] = await getVendors();
 
     let locationsToVendors: { [key: string]: SelectVendor[] } = {};
@@ -31,6 +31,18 @@ export default async function Vendors() {
         locationsToVendors[location].push(vendor);
     });
 
+    return {
+        props: {
+            locationsToVendors,
+        },
+    };
+}
+
+export default function Vendors({
+    locationsToVendors,
+}: {
+    locationsToVendors: { [key: string]: SelectVendor[] };
+}) {
     return (
         <div className="mx-auto max-w-7xl px-4 md:px-8">
             <h1 className="mb-8 text-3xl font-semibold lg:text-7xl">
@@ -40,7 +52,7 @@ export default async function Vendors() {
                 {Object.keys(locationsToVendors)
                     .reverse()
                     .map((location) => (
-                        <div key={location} className="">
+                        <div key={location}>
                             <div className="sticky-header w-full bg-white">
                                 <div className="flex w-full items-center justify-between">
                                     <div className="flex items-center gap-2">
@@ -53,12 +65,10 @@ export default async function Vendors() {
                                         <FloorMapButton location={location} />
                                     </div>
                                 </div>
-                                {/* Divider */}
                                 <div className="my-4 h-[1px] w-full bg-gray-300" />
                             </div>
 
                             <ul>
-                                {/* List the vendors here */}
                                 {locationsToVendors[location].map((vendor) => (
                                     <li
                                         className="my-4 flex flex-col"
