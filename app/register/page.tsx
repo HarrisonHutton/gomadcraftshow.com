@@ -22,7 +22,7 @@ export default function Register() {
     };
 
     const openApplication = () => {
-        openFile("/applications/2024_craft_show_application.pdf");
+        openFile("/applications/2025_craft_show_application.pdf");
     };
 
     const openFees = () => {
@@ -40,16 +40,21 @@ export default function Register() {
 
                     <div className="mt-8 rounded-lg border border-green-700 bg-green-100 p-4 text-green-900">
                         <span className="text-xl font-semibold">
-                            The 2024 show is now full! 🎉
+                            One last spot available in the 2025 show! 🎉
                         </span>
+                        <p>
+                            We have one spot remaining in the small cafe this
+                            year. Fill out the application now if you want it!
+                        </p>
                         <p className="mt-2">
-                            If you would like to be placed on the waitlist,
-                            please still fill out and send in the application!
+                            Note that sending in your application does not
+                            guarantee you the spot, but you may be placed on our
+                            waitlist.
                         </p>
                     </div>
 
                     <div className="mt-6 text-xl">
-                        <p>Fill out the 2024 application here!</p>
+                        <p>Fill out the 2025 application here!</p>
                         <div className="flex flex-wrap gap-4">
                             <Button
                                 size="lg"
@@ -63,14 +68,14 @@ export default function Register() {
                                 className="mt-2"
                                 onClick={openApplication}
                             >
-                                <span>2024 Application</span>
+                                <span>2025 Application</span>
                             </Button>
                         </div>
                     </div>
                 </div>
                 <div className="mt-12">
                     <h2 className="text-center text-5xl font-semibold">
-                        2024 Booth Rates
+                        2025 Booth Rates
                     </h2>
                     <div className="flex justify-center">
                         <div className="my-10 flex flex-col gap-10 text-xl lg:flex-row">

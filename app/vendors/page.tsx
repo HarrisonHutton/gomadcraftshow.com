@@ -1,5 +1,7 @@
 import { Vendors } from "./vendors";
 
+export const dynamic = "force-dynamic";
+
 // Server component that fetches vendors and renders them
 export default async function Page() {
     return (
