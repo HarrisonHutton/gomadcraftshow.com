@@ -40,16 +40,11 @@ export default function Register() {
 
                     <div className="mt-8 rounded-lg border border-green-700 bg-green-100 p-4 text-green-900">
                         <span className="text-xl font-semibold">
-                            One last spot available in the 2025 show! 🎉
+                            The show is fully booked! 🎉
                         </span>
-                        <p>
-                            We have one spot remaining in the small cafe this
-                            year. Fill out the application now if you want it!
-                        </p>
                         <p className="mt-2">
-                            Note that sending in your application does not
-                            guarantee you the spot, but you may be placed on our
-                            waitlist.
+                            You may still send in your application for a chance
+                            to be placed on our waitlist.
                         </p>
                     </div>
 

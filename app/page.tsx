@@ -63,12 +63,12 @@ export default function Home() {
                 {/* News card */}
                 <div className="hero-card mt-8 text-black md:mt-0">
                     <p className="text-3xl font-semibold">
-                        We&apos;ve got one spot left! 🎉
+                        The show is now full! 🎉
                     </p>
-                    <p className="mt-[-16px] opacity-50">09/01/25</p>
+                    <p className="mt-[-16px] opacity-50">09/05/25</p>
                     <p>
-                        As of today, there is one more spot available in the
-                        small cafe!
+                        The 2025 show is fully booked, but we are accepting
+                        waitlist applications.
                     </p>
                     <p className="author">GOMAD</p>
                     <Link href="/register">
