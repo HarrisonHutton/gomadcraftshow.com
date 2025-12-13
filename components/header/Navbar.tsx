@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 
 import styles from "./header.module.scss";
@@ -14,24 +14,26 @@ export function Navbar() {
 
     const navbarLinks = [
         { name: "Home", path: "/" },
-        // { name: "Find Vendors", path: "/vendors" },
+        { name: "Find Vendors", path: "/vendors" },
         { name: "Contact", path: "/contact" },
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);
+    /* To prevent scrolling when the navbar is open, conditionally
+     * apply the .noScroll class to the body element. */
+    const toggleNavbar = useCallback(() => {
+        setMenuOpen((prev) => {
+            const newValue = !prev;
+            document.body.classList.toggle(styles.noScroll, newValue);
+            return newValue;
+        });
+    }, []);
 
     useEffect(() => {
         if (menuOpen) {
             toggleNavbar();
         }
-    }, [pathname]);
-
-    /* To prevent scrolling when the navbar is open, conditionally
-     * apply the .noScroll class to the body element. */
-    const toggleNavbar = () => {
-        setMenuOpen(!menuOpen);
-        document.body.classList.toggle(styles.noScroll, !menuOpen);
-    };
+    }, [pathname, menuOpen, toggleNavbar]);
 
     return (
         <>
