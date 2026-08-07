@@ -11,7 +11,7 @@ export function Footer() {
                     <span className="my-14 h-[1px] w-full bg-gray-200"></span>
                 </div>
                 <div>
-                    <span>&copy; 2025. GOMAD. All rights reserved.</span>
+                    <span>&copy; 2026. GOMAD. All rights reserved.</span>
                 </div>
             </div>
         </footer>

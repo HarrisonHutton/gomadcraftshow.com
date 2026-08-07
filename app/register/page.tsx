@@ -22,11 +22,11 @@ export default function Register() {
     };
 
     const openApplication = () => {
-        openFile("/applications/2025_craft_show_application.pdf");
+        openFile("/applications/2026_craft_show_application.pdf");
     };
 
     const openFees = () => {
-        openFile("/applications/2024_craft_show_fees.pdf");
+        openFile("/applications/2026_rules_and_regs.pdf");
     };
 
     return (
@@ -40,16 +40,17 @@ export default function Register() {
 
                     <div className="mt-8 rounded-lg border border-green-700 bg-green-100 p-4 text-green-900">
                         <span className="text-xl font-semibold">
-                            The show is fully booked! 🎉
+                            Only 5 spots left! 🎉
                         </span>
                         <p className="mt-2">
                             You may still send in your application for a chance
-                            to be placed on our waitlist.
+                            to be placed on our waitlist if the show fills up
+                            before you can register.
                         </p>
                     </div>
 
                     <div className="mt-6 text-xl">
-                        <p>Fill out the 2025 application here!</p>
+                        <p>Fill out the 2026 application here!</p>
                         <div className="flex flex-wrap gap-4">
                             <Button
                                 size="lg"
@@ -63,14 +64,14 @@ export default function Register() {
                                 className="mt-2"
                                 onClick={openApplication}
                             >
-                                <span>2025 Application</span>
+                                <span>2026 Application</span>
                             </Button>
                         </div>
                     </div>
                 </div>
                 <div className="mt-12">
                     <h2 className="text-center text-5xl font-semibold">
-                        2025 Booth Rates
+                        2026 Booth Rates
                     </h2>
                     <div className="flex justify-center">
                         <div className="my-10 flex flex-col gap-10 text-xl lg:flex-row">
@@ -86,7 +87,7 @@ export default function Register() {
                                                 <div className="flex justify-between">
                                                     <span>Regular Space</span>
                                                     <span className="font-semibold">
-                                                        $40.00
+                                                        $45.00
                                                     </span>
                                                 </div>
                                                 <span className="opacity-50">
@@ -116,7 +117,7 @@ export default function Register() {
                                                 <div className="flex justify-between">
                                                     <span>Regular Space</span>
                                                     <span className="font-semibold">
-                                                        $55.00
+                                                        $60.00
                                                     </span>
                                                 </div>
                                                 <span className="opacity-50">
@@ -128,7 +129,7 @@ export default function Register() {
                                                 <div className="flex justify-between">
                                                     <span>Corner Space</span>
                                                     <span className="font-semibold">
-                                                        $65.00
+                                                        $70.00
                                                     </span>
                                                 </div>
                                                 <span className="opacity-50">
@@ -158,7 +159,7 @@ export default function Register() {
                                                 <div className="flex justify-between">
                                                     <span>Regular Space</span>
                                                     <span className="font-semibold">
-                                                        $60.00
+                                                        $65.00
                                                     </span>
                                                 </div>
                                                 <span className="opacity-50">
@@ -170,7 +171,7 @@ export default function Register() {
                                                 <div className="flex justify-between">
                                                     <span>Endcap Space</span>
                                                     <span className="font-semibold">
-                                                        $70.00
+                                                        $75.00
                                                     </span>
                                                 </div>
                                                 <div className="flex flex-col opacity-50">
@@ -183,7 +184,7 @@ export default function Register() {
                                                 <div className="flex justify-between">
                                                     <span>Corner Space</span>
                                                     <span className="font-semibold">
-                                                        $85.00
+                                                        $90.00
                                                     </span>
                                                 </div>
                                                 <div className="flex flex-col opacity-50">

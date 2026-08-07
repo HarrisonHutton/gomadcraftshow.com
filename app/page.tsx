@@ -40,7 +40,7 @@ export default function Home() {
                     </div>
                     <div className=" ">
                         <p className="text-3xl font-semibold">
-                            December 13th, 2025
+                            December 12th, 2026
                         </p>
                     </div>
                     <div className="mt-4">
@@ -63,12 +63,12 @@ export default function Home() {
                 {/* News card */}
                 <div className="hero-card mt-8 text-black md:mt-0">
                     <p className="text-3xl font-semibold">
-                        The show is now full! 🎉
+                        Only 5 spots left! 🎉
                     </p>
-                    <p className="mt-[-16px] opacity-50">09/05/25</p>
+                    <p className="mt-[-16px] opacity-50">07/07/26</p>
                     <p>
-                        The 2025 show is fully booked, but we are accepting
-                        waitlist applications.
+                        Head over to our registration page to fill our your
+                        application now!
                     </p>
                     <p className="author">GOMAD</p>
                     <Link href="/register">
@@ -133,7 +133,7 @@ export default function Home() {
                                 <span>Craft Show Date</span>
                             </div>
                             <span className="text-4xl font-semibold md:text-5xl">
-                                December 13th, 2025
+                                December 12th, 2026
                             </span>
                         </div>
 
