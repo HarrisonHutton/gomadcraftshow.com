@@ -205,11 +205,15 @@ export default function Home() {
                                 <div className="mt-6 flex items-center gap-3">
                                     <Wrench className="h-6 w-6 text-accent" />
                                     <span className="text-primary-foreground/70">
-                                        Setup Time
+                                        Vendor Setup
                                     </span>
                                 </div>
                                 <p className="mt-1 font-display text-4xl font-medium tracking-tight md:text-5xl">
                                     7 AM - 9:30 AM
+                                </p>
+                                <p className="mt-2 text-sm text-primary-foreground/70">
+                                    Morning of the show &middot; Saturday,
+                                    December 12th, 2026
                                 </p>
                             </div>
                             <Button
