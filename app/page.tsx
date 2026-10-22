@@ -34,18 +34,26 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-[hsl(155_60%_8%)] via-[hsl(155_60%_10%/0.7)] to-[hsl(155_60%_10%/0.15)]" />
 
-                    <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-between gap-12 px-6 py-16 md:px-10 md:py-24 xl:flex-row xl:items-end">
+                    <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-between gap-10 px-5 py-12 sm:px-6 sm:py-16 md:px-10 md:py-24 xl:flex-row xl:items-end">
                         {/* Hero text */}
                         <div className="flex max-w-3xl flex-col justify-end duration-700 animate-in fade-in slide-in-from-bottom-6">
                             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
                                 <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
-                                Saturday, December 12th, 2026 &middot; 10 AM - 4
-                                PM
+                                <span className="sm:hidden">
+                                    Sat, Dec 12th, 2026
+                                </span>
+                                <span className="hidden sm:inline">
+                                    Saturday, December 12th, 2026
+                                </span>
+                                &middot;
+                                <span className="whitespace-nowrap">
+                                    10 AM - 4 PM
+                                </span>
                             </span>
                             <p className="mt-8 text-lg font-medium text-white/80 md:text-xl">
                                 Greece Olympia Music and Drama
                             </p>
-                            <h1 className="mt-2 font-display text-6xl font-medium leading-[0.95] tracking-tight md:text-8xl">
+                            <h1 className="mt-2 font-display text-[3.5rem] font-medium leading-[0.95] tracking-tight sm:text-6xl md:text-8xl">
                                 Annual{" "}
                                 <span className="italic text-accent">
                                     Craft
@@ -57,7 +65,7 @@ export default function Home() {
                                 show, featuring over 100 vendors! Join us for a
                                 day of shopping, food, and fun!
                             </p>
-                            <div className="mt-8 flex flex-wrap gap-3">
+                            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                                 <Button asChild variant="gold" size="lg">
                                     <Link href="/register">
                                         Register to be in the show!
@@ -82,8 +90,11 @@ export default function Home() {
                                 </span>
                                 <span>07/07/26</span>
                             </div>
-                            <p className="mt-4 font-display text-3xl font-medium">
-                                Only 5 spots left! 🎉
+                            <p className="mt-4 font-display text-2xl font-medium sm:text-3xl">
+                                Only 5 spots{" "}
+                                <span className="whitespace-nowrap">
+                                    left! 🎉
+                                </span>
                             </p>
                             <p className="mt-2 text-white/80">
                                 Head over to our registration page to fill out
@@ -109,12 +120,12 @@ export default function Home() {
                     {stats.map((stat) => (
                         <div
                             key={stat.label}
-                            className="flex flex-col-reverse px-4 text-center"
+                            className="flex flex-col-reverse px-2 text-center sm:px-4"
                         >
-                            <dt className="text-sm text-muted-foreground md:text-base">
+                            <dt className="text-balance text-xs leading-tight text-muted-foreground sm:text-sm md:text-base">
                                 {stat.label}
                             </dt>
-                            <dd className="font-display text-3xl font-medium text-primary md:text-5xl">
+                            <dd className="mb-1 font-display text-3xl font-medium text-primary md:text-5xl">
                                 {stat.value}
                             </dd>
                         </div>
@@ -123,24 +134,24 @@ export default function Home() {
             </section>
 
             {/* Show info */}
-            <section className="relative mx-auto mt-24 max-w-7xl px-4 md:px-8">
+            <section className="relative mx-auto mt-16 max-w-7xl px-4 md:mt-24 md:px-8">
                 <div className="bg-dots pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     Plan your visit
                 </p>
-                <h2 className="mt-3 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-7xl">
+                <h2 className="mt-3 max-w-2xl font-display text-[2.75rem] font-medium tracking-tight sm:text-5xl md:text-7xl">
                     Where &amp; when
                 </h2>
 
-                <div className="mt-12 grid gap-4 md:grid-cols-3">
+                <div className="mt-8 grid gap-4 md:mt-12 md:grid-cols-3">
                     {/* Location */}
-                    <div className="group flex flex-col justify-between rounded-3xl border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg md:col-span-2 md:row-span-2">
+                    <div className="group flex flex-col justify-between rounded-3xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-8 md:col-span-2 md:row-span-2">
                         <div className="flex items-center gap-2 text-muted-foreground">
                             <MapPin className="h-5 w-5" />
                             <span>Location</span>
                         </div>
-                        <div className="mt-16">
+                        <div className="mt-8 md:mt-16">
                             <p className="font-display text-4xl font-medium tracking-tight md:text-6xl">
                                 Greece Olympia School
                             </p>
@@ -161,29 +172,29 @@ export default function Home() {
                     </div>
 
                     {/* Date */}
-                    <div className="rounded-3xl bg-accent p-8 text-accent-foreground shadow-sm">
+                    <div className="rounded-3xl bg-accent p-6 text-accent-foreground shadow-sm sm:p-8">
                         <div className="flex items-center gap-2 opacity-70">
                             <CalendarDays className="h-5 w-5" />
                             <span>Craft Show Date</span>
                         </div>
-                        <p className="mt-10 font-display text-4xl font-medium tracking-tight">
+                        <p className="mt-6 font-display text-4xl font-medium tracking-tight md:mt-10">
                             December 12th, 2026
                         </p>
                     </div>
 
                     {/* Sale time */}
-                    <div className="rounded-3xl border bg-card p-8 shadow-sm">
+                    <div className="rounded-3xl border bg-card p-6 shadow-sm sm:p-8">
                         <div className="flex items-center gap-2 text-muted-foreground">
                             <Clock className="h-5 w-5" />
                             <span>Sale Time</span>
                         </div>
-                        <p className="mt-10 font-display text-4xl font-medium tracking-tight">
+                        <p className="mt-6 font-display text-4xl font-medium tracking-tight md:mt-10">
                             10 AM - 4 PM
                         </p>
                     </div>
 
                     {/* For the vendors */}
-                    <div className="relative overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground shadow-sm md:col-span-3">
+                    <div className="relative overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground shadow-sm sm:p-8 md:col-span-3">
                         <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
                         <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-end">
                             <div>
@@ -201,7 +212,12 @@ export default function Home() {
                                     7 AM - 9:30 AM
                                 </p>
                             </div>
-                            <Button asChild variant="gold" size="lg">
+                            <Button
+                                asChild
+                                variant="gold"
+                                size="lg"
+                                className="w-full md:w-auto"
+                            >
                                 <Link href="/register">
                                     Booth rates &amp; application
                                     <ArrowRight className="ml-2 h-5 w-5" />

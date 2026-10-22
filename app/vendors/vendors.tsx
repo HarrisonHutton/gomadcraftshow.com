@@ -38,16 +38,18 @@ export async function Vendors() {
 
     return (
         <>
-            {/* Jump links */}
-            <div className="mt-8 flex flex-wrap items-center gap-2">
-                <span className="mr-1 text-muted-foreground">
-                    {vendors.length} vendors in
-                </span>
+            <p className="mt-6 text-lg text-muted-foreground">
+                {vendors.length} vendors across {locations.length}{" "}
+                {locations.length === 1 ? "room" : "rooms"}
+            </p>
+
+            {/* Jump links: a single row that scrolls sideways on narrow screens. */}
+            <nav className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:flex-wrap md:px-0 [&::-webkit-scrollbar]:hidden">
                 {locations.map((location) => (
                     <a
                         key={location}
                         href={`#${toAnchor(location)}`}
-                        className="rounded-full border bg-card px-4 py-1.5 text-sm font-medium transition-colors hover:border-primary/40 hover:bg-secondary"
+                        className="shrink-0 whitespace-nowrap rounded-full border bg-card px-4 py-1.5 text-sm font-medium transition-colors hover:border-primary/40 hover:bg-secondary"
                     >
                         {location}{" "}
                         <span className="text-muted-foreground">
@@ -55,13 +57,13 @@ export async function Vendors() {
                         </span>
                     </a>
                 ))}
-            </div>
+            </nav>
 
             {locations.map((location) => (
                 <section
                     key={location}
                     id={toAnchor(location)}
-                    className="mt-16 scroll-mt-20"
+                    className="mt-12 scroll-mt-20 md:mt-16"
                 >
                     <div className="sticky top-16 z-10 -mx-4 flex items-center justify-between gap-4 border-b bg-background/85 px-4 py-4 backdrop-blur-xl md:-mx-8 md:px-8">
                         <div className="flex items-center gap-3">
