@@ -1,7 +1,7 @@
 import { Megaphone } from "lucide-react";
 import { Vendors } from "./vendors";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 // Server component that fetches vendors and renders them
 export default async function Page() {
