@@ -69,7 +69,7 @@ export default function Home() {
                             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                                 <Button asChild variant="gold" size="lg">
                                     <Link href="/register">
-                                        Register to be in the show!
+                                        Join the vendor waitlist
                                         <ArrowUpRight className="ml-2 h-5 w-5" />
                                     </Link>
                                 </Button>
@@ -89,24 +89,25 @@ export default function Home() {
                                     <Sparkles className="h-4 w-4" />
                                     News from GOMAD
                                 </span>
-                                <span>07/07/26</span>
+                                <span>10/22/26</span>
                             </div>
                             <p className="mt-4 font-display text-2xl font-medium sm:text-3xl">
-                                Only 5 spots{" "}
+                                The show is{" "}
                                 <span className="whitespace-nowrap">
-                                    left! 🎉
+                                    full! 🎉
                                 </span>
                             </p>
                             <p className="mt-2 text-white/80">
-                                Head over to our registration page to fill out
-                                your application now!
+                                Thank you to everyone who applied! You may
+                                still send in an application to be placed on
+                                our waitlist.
                             </p>
                             <Button
                                 asChild
                                 className="mt-6 w-full bg-white text-primary hover:bg-white/90"
                             >
                                 <Link href="/register">
-                                    Register now!
+                                    Join the waitlist
                                     <ArrowUpRight className="ml-2 h-5 w-5" />
                                 </Link>
                             </Button>

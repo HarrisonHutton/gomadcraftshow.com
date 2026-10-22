@@ -77,15 +77,14 @@ export default function Register() {
                     <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-accent/30 blur-3xl" />
                     <span className="relative inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-sm font-semibold text-accent-foreground">
                         <span className="h-2 w-2 animate-pulse rounded-full bg-accent-foreground" />
-                        Filling up fast
+                        Waitlist open
                     </span>
                     <p className="relative mt-4 font-display text-3xl font-medium">
-                        Only 5 spots left! 🎉
+                        The show is full! 🎉
                     </p>
                     <p className="relative mt-2 text-primary-foreground/75">
-                        You may still send in your application for a chance to
-                        be placed on our waitlist if the show fills up before
-                        you can register.
+                        Thank you to everyone who applied! You may still send
+                        in your application to be placed on our waitlist.
                     </p>
                 </div>
             </div>
