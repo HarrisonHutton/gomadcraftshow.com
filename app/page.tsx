@@ -1,174 +1,216 @@
 import { Button } from "@/components/ui/button";
 import {
+    ArrowRight,
     ArrowUpRight,
     CalendarDays,
-    Wrench,
     Clock,
     MapPin,
+    Sparkles,
+    Store,
+    Wrench,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import "./card.css";
+const stats = [
+    { value: "100+", label: "Local vendors" },
+    { value: "3", label: "Shopping halls" },
+    { value: "6 hrs", label: "Of shopping" },
+];
 
 export default function Home() {
     return (
-        <div
-            className="relative"
-            style={{
-                backgroundImage: "url(./grid-tile-4.png)",
-                backgroundPositionX: "50%",
-                backgroundPositionY: "20%",
-            }}
-        >
-            {/* Transparent gradient for the background grid */}
-            <div className="absolute top-0 h-20 w-full bg-gradient-to-b from-white to-transparent"></div>
-
+        <div className="pb-20">
             {/* Hero section */}
-            <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 md:px-8 xl:flex-row">
-                {/* Hero text */}
-                <div className="flex h-[500px] flex-col justify-center">
-                    <div className="mt-12">
-                        <h1 className="text-3xl font-semibold md:text-4xl">
-                            Greece Olympia Music and Drama
-                        </h1>
+            <section className="px-2 pt-2 md:px-4 md:pt-4">
+                <div className="relative isolate overflow-hidden rounded-[2rem] bg-primary text-white">
+                    <Image
+                        src="/images/craft-show-gym.jpeg"
+                        alt="Shoppers browsing booths at the craft show"
+                        fill
+                        priority
+                        sizes="100vw"
+                        className="-z-20 object-cover"
+                    />
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-[hsl(155_60%_8%)] via-[hsl(155_60%_10%/0.7)] to-[hsl(155_60%_10%/0.15)]" />
+
+                    <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-between gap-12 px-6 py-16 md:px-10 md:py-24 xl:flex-row xl:items-end">
+                        {/* Hero text */}
+                        <div className="flex max-w-3xl flex-col justify-end duration-700 animate-in fade-in slide-in-from-bottom-6">
+                            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
+                                <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
+                                Saturday, December 12th, 2026 &middot; 10 AM - 4
+                                PM
+                            </span>
+                            <p className="mt-8 text-lg font-medium text-white/80 md:text-xl">
+                                Greece Olympia Music and Drama
+                            </p>
+                            <h1 className="mt-2 font-display text-6xl font-medium leading-[0.95] tracking-tight md:text-8xl">
+                                Annual{" "}
+                                <span className="italic text-accent">
+                                    Craft
+                                </span>{" "}
+                                Show
+                            </h1>
+                            <p className="mt-6 max-w-[50ch] text-lg text-white/80 md:text-xl">
+                                Western New York&apos;s largest winter craft
+                                show, featuring over 100 vendors! Join us for a
+                                day of shopping, food, and fun!
+                            </p>
+                            <div className="mt-8 flex flex-wrap gap-3">
+                                <Button asChild variant="gold" size="lg">
+                                    <Link href="/register">
+                                        Register to be in the show!
+                                        <ArrowUpRight className="ml-2 h-5 w-5" />
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="glass" size="lg">
+                                    <Link href="/vendors">
+                                        Find vendors
+                                        <ArrowRight className="ml-2 h-5 w-5" />
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* News card */}
+                        <div className="w-full max-w-sm rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl delay-300 duration-700 animate-in fade-in slide-in-from-bottom-6 fill-mode-both">
+                            <div className="flex items-center justify-between text-sm text-white/70">
+                                <span className="inline-flex items-center gap-1.5 font-semibold text-accent">
+                                    <Sparkles className="h-4 w-4" />
+                                    News from GOMAD
+                                </span>
+                                <span>07/07/26</span>
+                            </div>
+                            <p className="mt-4 font-display text-3xl font-medium">
+                                Only 5 spots left! 🎉
+                            </p>
+                            <p className="mt-2 text-white/80">
+                                Head over to our registration page to fill out
+                                your application now!
+                            </p>
+                            <Button
+                                asChild
+                                className="mt-6 w-full bg-white text-primary hover:bg-white/90"
+                            >
+                                <Link href="/register">
+                                    Register now!
+                                    <ArrowUpRight className="ml-2 h-5 w-5" />
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
-                    <div className="mt-2 md:mt-6">
-                        <h2 className="text-6xl font-bold md:text-8xl">
-                            Annual Craft Show
-                        </h2>
+                </div>
+            </section>
+
+            {/* Stats */}
+            <section className="mx-auto mt-12 max-w-7xl px-4 md:px-8">
+                <dl className="grid grid-cols-3 divide-x divide-border rounded-3xl border bg-card py-6 shadow-sm">
+                    {stats.map((stat) => (
+                        <div
+                            key={stat.label}
+                            className="flex flex-col-reverse px-4 text-center"
+                        >
+                            <dt className="text-sm text-muted-foreground md:text-base">
+                                {stat.label}
+                            </dt>
+                            <dd className="font-display text-3xl font-medium text-primary md:text-5xl">
+                                {stat.value}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
+            </section>
+
+            {/* Show info */}
+            <section className="relative mx-auto mt-24 max-w-7xl px-4 md:px-8">
+                <div className="bg-dots pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                    Plan your visit
+                </p>
+                <h2 className="mt-3 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-7xl">
+                    Where &amp; when
+                </h2>
+
+                <div className="mt-12 grid gap-4 md:grid-cols-3">
+                    {/* Location */}
+                    <div className="group flex flex-col justify-between rounded-3xl border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg md:col-span-2 md:row-span-2">
+                        <div className="flex items-center gap-2 text-muted-foreground">
+                            <MapPin className="h-5 w-5" />
+                            <span>Location</span>
+                        </div>
+                        <div className="mt-16">
+                            <p className="font-display text-4xl font-medium tracking-tight md:text-6xl">
+                                Greece Olympia School
+                            </p>
+                            <p className="mt-3 text-xl text-muted-foreground md:text-2xl">
+                                1139 Maiden Lane, Greece, NY 14615
+                            </p>
+                            <Button asChild variant="outline" className="mt-8">
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=1139+Maiden+Lane+Greece+NY+14615"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Get directions
+                                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                </a>
+                            </Button>
+                        </div>
                     </div>
-                    <div className=" ">
-                        <p className="text-3xl font-semibold">
+
+                    {/* Date */}
+                    <div className="rounded-3xl bg-accent p-8 text-accent-foreground shadow-sm">
+                        <div className="flex items-center gap-2 opacity-70">
+                            <CalendarDays className="h-5 w-5" />
+                            <span>Craft Show Date</span>
+                        </div>
+                        <p className="mt-10 font-display text-4xl font-medium tracking-tight">
                             December 12th, 2026
                         </p>
                     </div>
-                    <div className="mt-4">
-                        <p className="max-w-[50ch] text-xl">
-                            Western New York&apos;s largest winter craft show,
-                            featuring over 100 vendors! Join us for a day of
-                            shopping, food, and fun!
+
+                    {/* Sale time */}
+                    <div className="rounded-3xl border bg-card p-8 shadow-sm">
+                        <div className="flex items-center gap-2 text-muted-foreground">
+                            <Clock className="h-5 w-5" />
+                            <span>Sale Time</span>
+                        </div>
+                        <p className="mt-10 font-display text-4xl font-medium tracking-tight">
+                            10 AM - 4 PM
                         </p>
                     </div>
-                    <div className="mt-4">
-                        <Link href="/register">
-                            <Button className="flex items-center">
-                                <span>Register to be in the show!</span>
-                                <ArrowUpRight className="ml-2 h-5 w-5" />
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
 
-                {/* News card */}
-                <div className="hero-card mt-8 text-black md:mt-0">
-                    <p className="text-3xl font-semibold">
-                        Only 5 spots left! 🎉
-                    </p>
-                    <p className="mt-[-16px] opacity-50">07/07/26</p>
-                    <p>
-                        Head over to our registration page to fill our your
-                        application now!
-                    </p>
-                    <p className="author">GOMAD</p>
-                    <Link href="/register">
-                        <Button className="flex w-full items-center">
-                            <span>Register now!</span>
-                            <ArrowUpRight className="ml-2 h-5 w-5" />
-                        </Button>
-                    </Link>
-                </div>
-            </div>
-
-            {/* Craft show images */}
-            <div className="diagonal-clip relative mt-12 h-auto w-full md:mt-0">
-                <div className="absolute inset-0 z-10 opacity-50">
-                    {/* <Image
-                        src="/images/olympia-mesh.png"
-                        alt="green and gold mesh gradient"
-                        layout="fill"
-                    /> */}
-                </div>
-                <Image
-                    src="/images/craft-show-gym.jpeg"
-                    alt="Craft show gym"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }} // optional
-                />
-            </div>
-
-            {/* Show Info */}
-            <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-                {/* Location */}
-                <div>
-                    <div className="py-6 text-6xl font-semibold md:mx-auto md:text-8xl">
-                        <span>Where is it?</span>
-                    </div>
-                    <div className="flex flex-col gap-6 text-xl md:text-2xl">
-                        <div className="flex flex-col">
-                            <div className="flex items-center gap-2">
-                                <MapPin />
-                                <span>Location</span>
-                            </div>
-                            <div className="flex flex-col gap-2 text-4xl font-semibold md:text-5xl">
-                                <span>Greece Olympia School</span>
-                                <span>1139 Maiden Lane</span>
-                                <span>Greece, NY 14615</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Time */}
-                <div className="mt-8 md:mt-14">
-                    <div className="py-6 text-6xl font-semibold md:mx-auto md:text-8xl">
-                        <span>When should I get there?</span>
-                    </div>
-                    <div className="mt-4 flex flex-col gap-6 text-xl md:text-2xl">
-                        <div className="flex flex-col">
-                            <div className="flex items-center gap-2">
-                                <CalendarDays />
-                                <span>Craft Show Date</span>
-                            </div>
-                            <span className="text-4xl font-semibold md:text-5xl">
-                                December 12th, 2026
-                            </span>
-                        </div>
-
-                        <div className="flex flex-col">
-                            <div className="flex items-center gap-2">
-                                <Clock />
-                                <span>Sale Time</span>
-                            </div>
-                            <span className="text-4xl font-semibold md:text-5xl">
-                                10 AM - 4 PM
-                            </span>
-                        </div>
-                    </div>
-                    <div className="mt-12 flex flex-col gap-2 md:flex-row">
-                        <div className="">
-                            <div className="flex items-center gap-2 bg-gradient-to-tr from-blue-600 to-cyan-500 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
-                                {/* <Store className="h-8 w-8 text-black" /> */}
-                                <h3 className="text-black">For the vendors</h3>
-                            </div>
-                            <div className="mt-4 flex flex-col gap-4 text-xl md:text-2xl">
-                                <div className="flex flex-col">
-                                    <div className="flex items-center gap-2">
-                                        <Wrench />
-                                        <span>Setup Time</span>
-                                    </div>
-                                    <span className="text-4xl font-semibold md:text-5xl">
-                                        7 AM - 9:30 AM
+                    {/* For the vendors */}
+                    <div className="relative overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground shadow-sm md:col-span-3">
+                        <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
+                        <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-end">
+                            <div>
+                                <div className="flex items-center gap-2 text-primary-foreground/70">
+                                    <Store className="h-5 w-5" />
+                                    <span>For the vendors</span>
+                                </div>
+                                <div className="mt-6 flex items-center gap-3">
+                                    <Wrench className="h-6 w-6 text-accent" />
+                                    <span className="text-primary-foreground/70">
+                                        Setup Time
                                     </span>
                                 </div>
+                                <p className="mt-1 font-display text-4xl font-medium tracking-tight md:text-5xl">
+                                    7 AM - 9:30 AM
+                                </p>
                             </div>
+                            <Button asChild variant="gold" size="lg">
+                                <Link href="/register">
+                                    Booth rates &amp; application
+                                    <ArrowRight className="ml-2 h-5 w-5" />
+                                </Link>
+                            </Button>
                         </div>
-                        {/* <div className="h-full w-[2px] bg-gradient-to-t from-transparent via-black to-transparent"></div> */}
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

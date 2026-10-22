@@ -3,140 +3,130 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { ArrowUpRight } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
-import styles from "./header.module.scss";
+const navbarLinks = [
+    { name: "Home", path: "/" },
+    { name: "Find Vendors", path: "/vendors" },
+    { name: "Contact", path: "/contact" },
+];
 
 export function Navbar() {
     const pathname = usePathname();
-
-    const navbarLinks = [
-        { name: "Home", path: "/" },
-        { name: "Find Vendors", path: "/vendors" },
-        { name: "Contact", path: "/contact" },
-    ];
-
     const [menuOpen, setMenuOpen] = useState(false);
-    /* To prevent scrolling when the navbar is open, conditionally
-     * apply the .noScroll class to the body element. */
-    const toggleNavbar = useCallback(() => {
-        setMenuOpen((prev) => {
-            const newValue = !prev;
-            document.body.classList.toggle(styles.noScroll, newValue);
-            return newValue;
-        });
-    }, []);
 
+    /* Close the mobile menu whenever the route changes. */
     useEffect(() => {
-        if (menuOpen) {
-            toggleNavbar();
-        }
-    }, [pathname, menuOpen, toggleNavbar]);
+        setMenuOpen(false);
+    }, [pathname]);
+
+    /* Prevent the page from scrolling behind the open mobile menu. */
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? "hidden" : "";
+    }, [menuOpen]);
 
     return (
-        <>
-            <nav className="bg-white">
-                <ul className="mx-auto flex items-center justify-between px-2 text-lg md:px-4">
-                    {/* LOGO */}
-                    <div className="z-50">
-                        <li className="align-center flex justify-center rounded-lg md:p-4">
-                            <Link href="/" className="flex items-center gap-2">
-                                <Image
-                                    src="/images/Olympia.png"
-                                    alt="Olympia Logo"
-                                    width={35}
-                                    height={35}
-                                />
-                                <span className="text-2xl font-bold">
-                                    GOMAD
-                                </span>
+        <header className="sticky top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl">
+            <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8">
+                {/* Logo */}
+                <Link href="/" className="group flex items-center gap-2.5">
+                    <Image
+                        src="/images/Olympia.png"
+                        alt="Olympia Logo"
+                        width={36}
+                        height={36}
+                        className="transition-transform duration-300 group-hover:-rotate-12"
+                    />
+                    <span className="font-display text-2xl font-semibold tracking-tight">
+                        GOMAD
+                    </span>
+                </Link>
+
+                {/* Nav links */}
+                <ul className="hidden items-center gap-1 rounded-full border border-border/70 bg-card/60 p-1 md:flex">
+                    {navbarLinks.map((link) => (
+                        <li key={link.name}>
+                            <Link
+                                href={link.path}
+                                className={cn(
+                                    "block rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+                                    pathname === link.path
+                                        ? "bg-primary text-primary-foreground"
+                                        : "text-muted-foreground hover:bg-secondary hover:text-foreground",
+                                )}
+                            >
+                                {link.name}
                             </Link>
                         </li>
-                    </div>
-
-                    {/* Nav links */}
-                    <div className="hidden gap-2 md:flex">
-                        {navbarLinks.map((link) => (
-                            <li
-                                key={link.name}
-                                className="flex items-center justify-center rounded-lg p-4"
-                            >
-                                <Link
-                                    href={link.path}
-                                    className="transition-all hover:underline"
-                                >
-                                    {link.name}
-                                </Link>
-                            </li>
-                        ))}
-                    </div>
-
-                    {/* Register CTA */}
-                    <div className="hidden items-center p-4 md:flex">
-                        <Link href="/register">
-                            <Button className="flex items-center">
-                                <span>Register</span>
-                                <ArrowUpRight className="ml-2 h-5 w-5" />
-                            </Button>
-                        </Link>
-                    </div>
-
-                    {/* Mobile menu */}
-                    <div className="z-50 flex md:hidden">
-                        <button
-                            className="h-[50px] w-[50px] p-2"
-                            onClick={toggleNavbar}
-                        >
-                            <div
-                                className={`w-full transition-all ${styles.burger} ${menuOpen ? styles.burgerActive : ""}`}
-                            ></div>
-                        </button>
-                    </div>
+                    ))}
                 </ul>
+
+                {/* Register CTA */}
+                <div className="hidden md:block">
+                    <Button asChild variant="gold">
+                        <Link href="/register">
+                            Register
+                            <ArrowUpRight className="ml-1.5 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </div>
+
+                {/* Mobile menu toggle */}
+                <button
+                    className="-mr-2 rounded-full p-2 transition-colors hover:bg-secondary md:hidden"
+                    onClick={() => setMenuOpen((open) => !open)}
+                    aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={menuOpen}
+                >
+                    {menuOpen ? (
+                        <X className="h-6 w-6" />
+                    ) : (
+                        <Menu className="h-6 w-6" />
+                    )}
+                </button>
             </nav>
 
             {menuOpen && (
-                <div className="absolute left-0 right-0 top-[50px] z-40 h-[calc(100dvh-50px)] bg-white">
-                    <ul className="flex h-full flex-col">
+                <div className="fixed inset-x-0 bottom-0 top-16 z-40 bg-background duration-200 animate-in fade-in slide-in-from-top-2 md:hidden">
+                    <ul className="flex h-full flex-col gap-2 p-4">
                         {navbarLinks.map((link) => (
-                            <li
-                                key={link.name}
-                                className="flex items-center justify-center rounded-lg"
-                            >
+                            <li key={link.name}>
                                 <Link
                                     href={link.path}
-                                    className="p-6 text-3xl transition-all hover:underline"
-                                    onClick={() => {
-                                        if (pathname === link.path) {
-                                            toggleNavbar();
-                                        }
-                                    }}
+                                    onClick={() => setMenuOpen(false)}
+                                    className={cn(
+                                        "block rounded-2xl px-5 py-4 font-display text-3xl transition-colors",
+                                        pathname === link.path
+                                            ? "bg-secondary"
+                                            : "hover:bg-secondary",
+                                    )}
                                 >
                                     {link.name}
                                 </Link>
                             </li>
                         ))}
-                        <li className="flex w-full items-center p-4">
-                            <Link
-                                href="/register"
-                                className="w-full"
-                                onClick={() => {
-                                    if (pathname === "/register") {
-                                        toggleNavbar();
-                                    }
-                                }}
+                        <li className="mt-auto">
+                            <Button
+                                asChild
+                                variant="gold"
+                                size="lg"
+                                className="h-16 w-full text-xl"
                             >
-                                <Button className="flex w-full items-center p-6 text-3xl font-normal">
-                                    <span>Register</span>
-                                    <ArrowUpRight className="ml-2 h-8 w-8" />
-                                </Button>
-                            </Link>
+                                <Link
+                                    href="/register"
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    Register
+                                    <ArrowUpRight className="ml-2 h-6 w-6" />
+                                </Link>
+                            </Button>
                         </li>
                     </ul>
                 </div>
             )}
-        </>
+        </header>
     );
 }
