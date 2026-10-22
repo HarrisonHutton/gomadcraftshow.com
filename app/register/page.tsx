@@ -36,11 +36,11 @@ const boothRates = [
 
 export default function Register() {
     return (
-        <div className="mx-auto max-w-7xl px-4 pb-20 pt-10 md:px-8 md:pb-24 md:pt-24">
+        <div className="mx-auto max-w-7xl px-4 pt-10 pb-20 md:px-8 md:pt-24 md:pb-24">
             {/* Header */}
             <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
                 <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                    <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">
                         Vendors
                     </p>
                     <h1 className="mt-3 font-display text-[3.5rem] font-medium tracking-tight sm:text-6xl md:text-8xl">
@@ -74,7 +74,7 @@ export default function Register() {
 
                 {/* Availability notice */}
                 <div className="relative overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground sm:p-8">
-                    <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/30 blur-3xl" />
+                    <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-accent/30 blur-3xl" />
                     <span className="relative inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-sm font-semibold text-accent-foreground">
                         <span className="h-2 w-2 animate-pulse rounded-full bg-accent-foreground" />
                         Filling up fast
@@ -99,7 +99,7 @@ export default function Register() {
                     {boothRates.map((room) => (
                         <div
                             key={room.location}
-                            className="flex flex-col rounded-3xl border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 sm:p-7"
+                            className="flex flex-col rounded-3xl border bg-card p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 sm:p-7"
                         >
                             <div className="flex items-baseline justify-between gap-4">
                                 <h3 className="font-display text-3xl font-medium">
@@ -113,7 +113,7 @@ export default function Register() {
                                 </span>
                             </div>
 
-                            <ul className="mt-6 flex-grow divide-y border-t">
+                            <ul className="mt-6 grow divide-y border-t">
                                 {room.spaces.map((space) => (
                                     <li key={space.name} className="py-4">
                                         <div className="flex justify-between text-lg">

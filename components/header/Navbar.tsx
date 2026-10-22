@@ -17,11 +17,13 @@ const navbarLinks = [
 export function Navbar() {
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [prevPathname, setPrevPathname] = useState(pathname);
 
     /* Close the mobile menu whenever the route changes. */
-    useEffect(() => {
+    if (pathname !== prevPathname) {
+        setPrevPathname(pathname);
         setMenuOpen(false);
-    }, [pathname]);
+    }
 
     /* Prevent the page from scrolling behind the open mobile menu. */
     useEffect(() => {
@@ -94,7 +96,7 @@ export function Navbar() {
             {/* Rendered outside the header: its backdrop-blur would otherwise
              * become the containing block for this fixed overlay. */}
             {menuOpen && (
-                <div className="fixed inset-x-0 bottom-0 top-16 z-40 bg-background duration-200 animate-in fade-in slide-in-from-top-2 md:hidden">
+                <div className="fixed inset-x-0 top-16 bottom-0 z-40 animate-in bg-background duration-200 fade-in slide-in-from-top-2 md:hidden">
                     <ul className="flex h-full flex-col gap-2 p-4">
                         {navbarLinks.map((link) => (
                             <li key={link.name}>

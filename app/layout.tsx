@@ -4,11 +4,11 @@ import "./globals.css";
 import { Navbar } from "@/components/header/Navbar";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const fraunces = Fraunces({
     subsets: ["latin"],
     style: ["normal", "italic"],
-    variable: "--font-display",
+    variable: "--font-fraunces",
 });
 
 export const metadata: Metadata = {
@@ -24,10 +24,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
-            <body className="font-sans">
+            {/* Extensions like Grammarly add attributes to <body> before
+             * React hydrates; ignore those attribute mismatches. */}
+            <body className="font-sans" suppressHydrationWarning>
                 <div className="flex min-h-dvh flex-col">
                     <Navbar />
-                    <main className="flex-grow">{children}</main>
+                    <main className="grow">{children}</main>
                     <Footer />
                 </div>
             </body>

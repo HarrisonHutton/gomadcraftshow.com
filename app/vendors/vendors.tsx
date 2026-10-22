@@ -44,12 +44,12 @@ export async function Vendors() {
             </p>
 
             {/* Jump links: a single row that scrolls sideways on narrow screens. */}
-            <nav className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:flex-wrap md:px-0 [&::-webkit-scrollbar]:hidden">
+            <nav className="-mx-4 mt-4 flex scrollbar-none gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0 [&::-webkit-scrollbar]:hidden">
                 {locations.map((location) => (
                     <a
                         key={location}
                         href={`#${toAnchor(location)}`}
-                        className="shrink-0 whitespace-nowrap rounded-full border bg-card px-4 py-1.5 text-sm font-medium transition-colors hover:border-primary/40 hover:bg-secondary"
+                        className="shrink-0 rounded-full border bg-card px-4 py-1.5 text-sm font-medium whitespace-nowrap transition-colors hover:border-primary/40 hover:bg-secondary"
                     >
                         {location}{" "}
                         <span className="text-muted-foreground">
@@ -81,9 +81,9 @@ export async function Vendors() {
                         {locationsToVendors[location].map((vendor) => (
                             <li
                                 key={vendor.id}
-                                className="flex flex-col justify-between gap-6 rounded-2xl border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
+                                className="flex flex-col justify-between gap-6 rounded-2xl border bg-card p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
                             >
-                                <span className="text-xl font-semibold leading-snug">
+                                <span className="text-xl leading-snug font-semibold">
                                     {vendor.vendor_name ||
                                         `${vendor.first_name} ${vendor.last_name}`}
                                 </span>

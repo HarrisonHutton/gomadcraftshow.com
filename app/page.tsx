@@ -24,7 +24,7 @@ export default function Home() {
         <div className="pb-20">
             {/* Hero section */}
             <section className="px-2 pt-2 md:px-4 md:pt-4">
-                <div className="relative isolate overflow-hidden rounded-[2rem] bg-primary text-white">
+                <div className="relative isolate overflow-hidden rounded-4xl bg-primary text-white">
                     <Image
                         src="/images/craft-show-gym.jpeg"
                         alt="Shoppers browsing booths at the craft show"
@@ -33,11 +33,11 @@ export default function Home() {
                         sizes="100vw"
                         className="-z-20 object-cover"
                     />
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-[hsl(155_60%_8%)] via-[hsl(155_60%_10%/0.7)] to-[hsl(155_60%_10%/0.15)]" />
+                    <div className="absolute inset-0 -z-10 bg-linear-to-tr from-[hsl(155_60%_8%)] via-[hsl(155_60%_10%/0.7)] to-[hsl(155_60%_10%/0.15)]" />
 
                     <div className="mx-auto flex min-h-[640px] max-w-7xl flex-col justify-between gap-10 px-5 py-12 sm:px-6 sm:py-16 md:px-10 md:py-24 xl:flex-row xl:items-end">
                         {/* Hero text */}
-                        <div className="flex max-w-3xl flex-col justify-end duration-700 animate-in fade-in slide-in-from-bottom-6">
+                        <div className="flex max-w-3xl animate-in flex-col justify-end duration-700 fade-in slide-in-from-bottom-6">
                             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
                                 <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
                                 <span className="sm:hidden">
@@ -54,9 +54,9 @@ export default function Home() {
                             <p className="mt-8 text-lg font-medium text-white/80 md:text-xl">
                                 Greece Olympia Music and Drama
                             </p>
-                            <h1 className="mt-2 font-display text-[3.5rem] font-medium leading-[0.95] tracking-tight sm:text-6xl md:text-8xl">
+                            <h1 className="mt-2 font-display text-[3.5rem] leading-[0.95] font-medium tracking-tight sm:text-6xl md:text-8xl">
                                 Annual{" "}
-                                <span className="italic text-accent">
+                                <span className="text-accent italic">
                                     Craft
                                 </span>{" "}
                                 Show
@@ -83,7 +83,7 @@ export default function Home() {
                         </div>
 
                         {/* News card */}
-                        <div className="w-full max-w-sm rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl delay-300 duration-700 animate-in fade-in slide-in-from-bottom-6 fill-mode-both">
+                        <div className="w-full max-w-sm animate-in rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl delay-300 duration-700 fill-mode-both fade-in slide-in-from-bottom-6">
                             <div className="flex items-center justify-between text-sm text-white/70">
                                 <span className="inline-flex items-center gap-1.5 font-semibold text-accent">
                                     <Sparkles className="h-4 w-4" />
@@ -117,13 +117,13 @@ export default function Home() {
 
             {/* Stats */}
             <section className="mx-auto mt-12 max-w-7xl px-4 md:px-8">
-                <dl className="grid grid-cols-3 divide-x divide-border rounded-3xl border bg-card py-6 shadow-sm">
+                <dl className="grid grid-cols-3 divide-x divide-border rounded-3xl border bg-card py-6 shadow-xs">
                     {stats.map((stat) => (
                         <div
                             key={stat.label}
                             className="flex flex-col-reverse px-2 text-center sm:px-4"
                         >
-                            <dt className="text-balance text-xs leading-tight text-muted-foreground sm:text-sm md:text-base">
+                            <dt className="text-xs leading-tight text-balance text-muted-foreground sm:text-sm md:text-base">
                                 {stat.label}
                             </dt>
                             <dd className="mb-1 font-display text-3xl font-medium text-primary md:text-5xl">
@@ -136,9 +136,9 @@ export default function Home() {
 
             {/* Show info */}
             <section className="relative mx-auto mt-16 max-w-7xl px-4 md:mt-24 md:px-8">
-                <div className="bg-dots pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-dots mask-[radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">
                     Plan your visit
                 </p>
                 <h2 className="mt-3 max-w-2xl font-display text-[2.75rem] font-medium tracking-tight sm:text-5xl md:text-7xl">
@@ -147,7 +147,7 @@ export default function Home() {
 
                 <div className="mt-8 grid gap-4 md:mt-12 md:grid-cols-3">
                     {/* Location */}
-                    <div className="group flex flex-col justify-between rounded-3xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-8 md:col-span-2 md:row-span-2">
+                    <div className="group flex flex-col justify-between rounded-3xl border bg-card p-6 shadow-xs transition-shadow hover:shadow-lg sm:p-8 md:col-span-2 md:row-span-2">
                         <div className="flex items-center gap-2 text-muted-foreground">
                             <MapPin className="h-5 w-5" />
                             <span>Location</span>
@@ -166,23 +166,23 @@ export default function Home() {
                                     rel="noreferrer"
                                 >
                                     Get directions
-                                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                 </a>
                             </Button>
                         </div>
                     </div>
 
                     {/* Date */}
-                    <div className="relative isolate overflow-hidden rounded-3xl bg-accent p-6 text-accent-foreground shadow-sm sm:p-8">
+                    <div className="relative isolate overflow-hidden rounded-3xl bg-accent p-6 text-accent-foreground shadow-xs sm:p-8">
                         {/* Decorative snowflakes */}
                         <div
                             aria-hidden="true"
                             className="pointer-events-none absolute inset-0 -z-10"
                         >
-                            <Snowflake className="absolute -right-6 -top-6 h-32 w-32 opacity-10 motion-safe:animate-[spin_40s_linear_infinite]" />
-                            <Snowflake className="absolute right-24 top-6 h-8 w-8 opacity-15 motion-safe:animate-[spin_25s_linear_infinite_reverse]" />
-                            <Snowflake className="absolute right-10 top-28 h-5 w-5 opacity-20" />
-                            <Snowflake className="absolute bottom-6 right-6 h-10 w-10 opacity-10 motion-safe:animate-[spin_30s_linear_infinite]" />
+                            <Snowflake className="absolute -top-6 -right-6 h-32 w-32 opacity-10 motion-safe:animate-[spin_40s_linear_infinite]" />
+                            <Snowflake className="absolute top-6 right-24 h-8 w-8 opacity-15 motion-safe:animate-[spin_25s_linear_infinite_reverse]" />
+                            <Snowflake className="absolute top-28 right-10 h-5 w-5 opacity-20" />
+                            <Snowflake className="absolute right-6 bottom-6 h-10 w-10 opacity-10 motion-safe:animate-[spin_30s_linear_infinite]" />
                         </div>
                         <div className="flex items-center gap-2 opacity-70">
                             <CalendarDays className="h-5 w-5" />
@@ -214,7 +214,7 @@ export default function Home() {
                     </div>
 
                     {/* Sale time */}
-                    <div className="rounded-3xl border bg-card p-6 shadow-sm sm:p-8">
+                    <div className="rounded-3xl border bg-card p-6 shadow-xs sm:p-8">
                         <div className="flex items-center gap-2 text-muted-foreground">
                             <Clock className="h-5 w-5" />
                             <span>Shopping Hours</span>
@@ -223,14 +223,13 @@ export default function Home() {
                             10 AM - 4 PM
                         </p>
                         <p className="mt-2 text-sm text-muted-foreground">
-                            Open to the public &middot; Saturday, Dec 12th,
-                            2026
+                            Open to the public &middot; Saturday, Dec 12th, 2026
                         </p>
                     </div>
 
                     {/* For the vendors */}
-                    <div className="relative overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground shadow-sm sm:p-8 md:col-span-3">
-                        <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
+                    <div className="relative overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground shadow-xs sm:p-8 md:col-span-3">
+                        <div className="pointer-events-none absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
                         <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-end">
                             <div>
                                 <div className="flex items-center gap-2 text-primary-foreground/70">
