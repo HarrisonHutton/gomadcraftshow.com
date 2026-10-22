@@ -5,6 +5,7 @@ import {
     CalendarDays,
     Clock,
     MapPin,
+    Snowflake,
     Sparkles,
     Store,
     Wrench,
@@ -172,14 +173,44 @@ export default function Home() {
                     </div>
 
                     {/* Date */}
-                    <div className="rounded-3xl bg-accent p-6 text-accent-foreground shadow-sm sm:p-8">
+                    <div className="relative isolate overflow-hidden rounded-3xl bg-accent p-6 text-accent-foreground shadow-sm sm:p-8">
+                        {/* Decorative snowflakes */}
+                        <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 -z-10"
+                        >
+                            <Snowflake className="absolute -right-6 -top-6 h-32 w-32 opacity-10 motion-safe:animate-[spin_40s_linear_infinite]" />
+                            <Snowflake className="absolute right-24 top-6 h-8 w-8 opacity-15 motion-safe:animate-[spin_25s_linear_infinite_reverse]" />
+                            <Snowflake className="absolute right-10 top-28 h-5 w-5 opacity-20" />
+                            <Snowflake className="absolute bottom-6 right-6 h-10 w-10 opacity-10 motion-safe:animate-[spin_30s_linear_infinite]" />
+                        </div>
                         <div className="flex items-center gap-2 opacity-70">
                             <CalendarDays className="h-5 w-5" />
-                            <span>Craft Show Date</span>
+                            <span>Save the Date</span>
                         </div>
                         <p className="mt-6 font-display text-4xl font-medium tracking-tight md:mt-10">
                             December 12th, 2026
                         </p>
+                        <p className="mt-2 text-sm opacity-70">
+                            Bundle up, it&apos;s December in Western New York!
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-2">
+                            <a
+                                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=GOMAD+Annual+Craft+Show&dates=20261212T150000Z/20261212T210000Z&location=Greece+Olympia+School,+1139+Maiden+Lane,+Greece,+NY+14615"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex h-9 items-center rounded-full border border-accent-foreground/20 px-4 text-sm font-semibold transition-colors hover:bg-accent-foreground/10"
+                            >
+                                Google Calendar
+                            </a>
+                            <a
+                                href="/gomad-craft-show-2026.ics"
+                                download
+                                className="inline-flex h-9 items-center rounded-full border border-accent-foreground/20 px-4 text-sm font-semibold transition-colors hover:bg-accent-foreground/10"
+                            >
+                                Apple / Outlook
+                            </a>
+                        </div>
                     </div>
 
                     {/* Sale time */}
@@ -192,8 +223,8 @@ export default function Home() {
                             10 AM - 4 PM
                         </p>
                         <p className="mt-2 text-sm text-muted-foreground">
-                            Open to the public &middot; Saturday, December
-                            12th, 2026
+                            Open to the public &middot; Saturday, Dec 12th,
+                            2026
                         </p>
                     </div>
 
@@ -216,8 +247,8 @@ export default function Home() {
                                     7 AM - 9:30 AM
                                 </p>
                                 <p className="mt-2 text-sm text-primary-foreground/70">
-                                    Morning of the show &middot; Saturday,
-                                    December 12th, 2026
+                                    Morning of the show &middot; Saturday, Dec
+                                    12th, 2026
                                 </p>
                             </div>
                             <Button
