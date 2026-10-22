@@ -1,12 +1,16 @@
 import { SelectVendor, vendorsTable } from "@/db/schema";
 import { db } from "@/db/connection";
 import { MapPin, User } from "lucide-react";
+import { unstable_cache } from "next/cache";
 import { FloorMapButton } from "./floor-map-button";
 
-// Function to fetch vendors
-const getVendors = async () => {
-    return db.select().from(vendorsTable);
-};
+// Function to fetch vendors, cached for an hour so most visits skip the
+// database entirely. Call revalidateTag("vendors") to refresh it sooner.
+const getVendors = unstable_cache(
+    async () => db.select().from(vendorsTable),
+    ["vendors"],
+    { revalidate: 3600, tags: ["vendors"] },
+);
 
 // Function to determine the location based on the vendor location
 const getLocation = (locationString: string) => {
