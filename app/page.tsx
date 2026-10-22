@@ -186,10 +186,14 @@ export default function Home() {
                     <div className="rounded-3xl border bg-card p-6 shadow-sm sm:p-8">
                         <div className="flex items-center gap-2 text-muted-foreground">
                             <Clock className="h-5 w-5" />
-                            <span>Sale Time</span>
+                            <span>Shopping Hours</span>
                         </div>
                         <p className="mt-6 font-display text-4xl font-medium tracking-tight md:mt-10">
                             10 AM - 4 PM
+                        </p>
+                        <p className="mt-2 text-sm text-muted-foreground">
+                            Open to the public &middot; Saturday, December
+                            12th, 2026
                         </p>
                     </div>
 
